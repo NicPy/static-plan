@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tracker — Habits, Weight & Progress</title>
+  <meta name="description" content="Track daily habits and log your weight & waist with a trend line and progress to goal. Saved on your device." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="dot">◆</span> 3-Week Reset</a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="food-plan.html">Food Plan</a>
+        <a href="nutrition.html">Theory</a>
+        <a href="exercises.html">Exercises</a>
+        <a href="shopping-list.html">Shopping</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="tips.html">Tips</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Stay honest, stay motivated</span>
+      <h1>Your tracker</h1>
+      <p class="lead">Tick your daily habits and log your weight once a week. Everything saves on this device — no account needed.</p>
+    </div>
+  </section>
+
+  <!-- PROGRESS SUMMARY -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="card">
+        <div class="flex between items-center wrap gap-2">
+          <div>
+            <h3 class="mt-0 mb-0">Progress to goal</h3>
+            <p class="muted mb-0" id="progressText">Set your goal weight and log your first weight to start tracking.</p>
+          </div>
+          <div class="macro-pills">
+            <span class="macro-pill kcal"><b id="statStart">—</b> kg start</span>
+            <span class="macro-pill protein"><b id="statNow">—</b> kg now</span>
+            <span class="macro-pill fat"><b id="statLost">0.0</b> kg lost</span>
+            <span class="macro-pill water"><b id="statGoal">—</b> kg goal</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 mt-2 wrap">
+          <label class="lbl" for="goalKg">Goal weight (kg)</label>
+          <input type="number" id="goalKg" step="0.1" placeholder="e.g. 75" style="max-width:130px" />
+        </div>
+        <div class="progress mt-2"><span id="progressBar" style="width:0%"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAILY HABITS -->
+  <section class="section-tight">
+    <div class="container">
+      <h2>Daily habits</h2>
+      <p class="muted">Pick the date and tick what you hit. Aim for 4–5 green ticks every day — that's what drives the result.</p>
+      <div class="card">
+        <div class="field" style="max-width:220px">
+          <label class="lbl" for="habitDate">Date</label>
+          <input type="date" id="habitDate" />
+        </div>
+        <div id="habits" class="mt-2">
+          <ul class="checklist">
+            <li><input type="checkbox" id="h1" data-item="protein"><label for="h1">Hit ~170 g protein</label></li>
+            <li><input type="checkbox" id="h2" data-item="calories"><label for="h2">Stayed around ~1,650 kcal (didn't blow past it)</label></li>
+            <li><input type="checkbox" id="h3" data-item="water"><label for="h3">Drank ~3 L water</label></li>
+            <li><input type="checkbox" id="h4" data-item="steps"><label for="h4">8–10k steps / a walk</label></li>
+            <li><input type="checkbox" id="h5" data-item="workout"><label for="h5">Workout done (if a training day)</label></li>
+            <li><input type="checkbox" id="h6" data-item="sleep"><label for="h6">7–8 h sleep</label></li>
+            <li><input type="checkbox" id="h7" data-item="noalcohol"><label for="h7">No alcohol / sugary drinks</label></li>
+          </ul>
+        </div>
+        <div class="flex between items-center mt-2">
+          <small class="muted" id="habitCount">0 / 7 today</small>
+          <div class="progress" style="width:55%"><span id="habitBar" style="width:0%"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEIGHT LOG -->
+  <section class="section">
+    <div class="container">
+      <h2>Weight &amp; waist log</h2>
+      <div class="callout info"><span class="ci">⚖️</span><div>Weigh under the <strong>same conditions</strong> — morning, after the toilet, before eating. Once a week is plenty; daily is fine too if you watch the <em>trend</em>, not the daily wiggle. Add a waist measurement (at the belly button) — it often drops even when the scale stalls.</div></div>
+
+      <div class="grid cols-2 mt-2">
+        <div class="card">
+          <h3 class="mt-0">Add an entry</h3>
+          <div class="grid cols-2">
+            <div class="field"><label class="lbl" for="wDate">Date</label><input type="date" id="wDate" /></div>
+            <div class="field"><label class="lbl" for="wKg">Weight (kg)</label><input type="number" id="wKg" step="0.1" placeholder="e.g. 80.0" /></div>
+            <div class="field"><label class="lbl" for="wWaist">Waist (cm)</label><input type="number" id="wWaist" step="0.5" placeholder="optional" /></div>
+            <div class="field"><label class="lbl" for="wNote">Note</label><input type="text" id="wNote" placeholder="optional" /></div>
+          </div>
+          <button class="btn btn-primary mt-2" id="addEntry">＋ Add entry</button>
+        </div>
+        <div class="card">
+          <h3 class="mt-0">Weight trend</h3>
+          <canvas id="trend" class="trend" width="520" height="220"></canvas>
+          <p class="muted mb-0 mt-1"><small>Dashed line = your goal weight. Judge the slope over weeks, not days.</small></p>
+        </div>
+      </div>
+
+      <div class="table-wrap mt-3">
+        <table>
+          <thead><tr><th>Date</th><th>Weight (kg)</th><th>Waist (cm)</th><th>Δ vs start</th><th>Note</th><th class="no-print"></th></tr></thead>
+          <tbody id="logBody">
+            <tr><td colspan="6" class="muted">No entries yet — add your day-0 weight above.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACKUP / RESTORE -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="card">
+        <h3 class="mt-0">Backup &amp; restore</h3>
+        <p class="muted">Your data lives in this browser. Export a backup file to keep it safe or move it to another device — and the same export is what we'd import into a database later if you ever want sync.</p>
+        <div class="btn-row">
+          <button class="btn btn-ghost" id="exportBtn">⬇️ Download my data</button>
+          <label class="btn btn-ghost" style="cursor:pointer">⬆️ Restore from file<input type="file" id="importFile" accept="application/json" hidden></label>
+          <button class="btn btn-ghost" id="resetBtn">🗑️ Reset everything</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p><strong>3-Week Reset</strong> — Tracker · summer <span data-year>2026</span>.</p>
+      <p>Data is stored only in this browser (localStorage). Clearing browser data erases it — export a backup to be safe.</p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+  <script>
+  (function () {
+    "use strict";
+    var S = window.FP.Storage;
+    var GOAL = null;                                  // goal weight (kg) — user-entered, persisted
+    var goalInput = document.getElementById('goalKg');
+    var todayStr = function () { return new Date().toISOString().slice(0, 10); };
+
+    /* ---------------- Daily habits ---------------- */
+    var habitDate = document.getElementById('habitDate');
+    var habitsEl = document.getElementById('habits');
+    habitDate.value = todayStr();
+
+    function habitBoxes() { return habitsEl.querySelectorAll('input[type="checkbox"][data-item]'); }
+    async function loadHabits(date) {
+      var rec = (await S.get('habits:' + date, {})) || {};
+      habitBoxes().forEach(function (b) { b.checked = !!rec[b.dataset.item]; });
+      updateHabitCount();
+    }
+    function updateHabitCount() {
+      var boxes = habitBoxes(), total = boxes.length, n = 0;
+      boxes.forEach(function (b) { if (b.checked) n++; });
+      document.getElementById('habitCount').textContent = n + ' / ' + total + ' on ' + habitDate.value;
+      document.getElementById('habitBar').style.width = (n / total * 100) + '%';
+    }
+    habitsEl.addEventListener('change', async function (e) {
+      if (!e.target.matches('input[type="checkbox"][data-item]')) return;
+      var date = habitDate.value;
+      var rec = (await S.get('habits:' + date, {})) || {};
+      rec[e.target.dataset.item] = e.target.checked;
+      await S.set('habits:' + date, rec);
+      updateHabitCount();
+    });
+    habitDate.addEventListener('change', function () { loadHabits(habitDate.value); });
+
+    /* ---------------- Weight log ---------------- */
+    var wDate = document.getElementById('wDate');
+    wDate.value = todayStr();
+
+    /* ---------------- Goal weight ---------------- */
+    async function loadGoal() {
+      var g = await S.get('goalkg', null);
+      GOAL = (g == null ? null : parseFloat(g));
+      goalInput.value = (GOAL == null ? '' : GOAL);
+      document.getElementById('statGoal').textContent = (GOAL == null ? '—' : GOAL.toFixed(1));
+    }
+    goalInput.addEventListener('change', async function () {
+      var v = parseFloat(goalInput.value);
+      if (isNaN(v)) { GOAL = null; await S.remove('goalkg'); }
+      else { GOAL = v; await S.set('goalkg', v); }
+      document.getElementById('statGoal').textContent = (GOAL == null ? '—' : GOAL.toFixed(1));
+      render();
+    });
+
+    async function getLog() {
+      var log = (await S.get('weightlog', [])) || [];
+      log.sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+      return log;
+    }
+    async function saveLog(log) { await S.set('weightlog', log); }
+
+    document.getElementById('addEntry').addEventListener('click', async function () {
+      var kg = parseFloat(document.getElementById('wKg').value);
+      if (isNaN(kg)) { alert('Enter a weight in kg.'); return; }
+      var entry = {
+        date: wDate.value || todayStr(),
+        kg: kg,
+        waist: parseFloat(document.getElementById('wWaist').value) || null,
+        note: document.getElementById('wNote').value.trim()
+      };
+      var log = await getLog();
+      // replace same-date entry if present
+      log = log.filter(function (e) { return e.date !== entry.date; });
+      log.push(entry);
+      await saveLog(log);
+      document.getElementById('wKg').value = '';
+      document.getElementById('wWaist').value = '';
+      document.getElementById('wNote').value = '';
+      render();
+    });
+
+    async function deleteEntry(date) {
+      var log = await getLog();
+      log = log.filter(function (e) { return e.date !== date; });
+      await saveLog(log);
+      render();
+    }
+    window.__delEntry = deleteEntry;
+
+    function fmtDelta(d) {
+      if (d === 0) return '—';
+      var s = (d > 0 ? '▼ ' : '▲ +') + Math.abs(d).toFixed(1);
+      return '<span style="color:' + (d > 0 ? 'var(--teal-dark)' : 'var(--terracotta)') + ';font-weight:700">' + s + '</span>';
+    }
+
+    async function render() {
+      var log = await getLog();
+      var body = document.getElementById('logBody');
+
+      if (!log.length) {
+        body.innerHTML = '<tr><td colspan="6" class="muted">No entries yet — add your day-0 weight above.</td></tr>';
+      } else {
+        var start = log[0].kg;
+        body.innerHTML = log.map(function (e) {
+          return '<tr><td>' + e.date + '</td><td><strong>' + e.kg.toFixed(1) + '</strong></td><td>' +
+            (e.waist ? e.waist : '—') + '</td><td>' + fmtDelta(+(start - e.kg).toFixed(1)) + '</td><td>' +
+            (e.note ? e.note.replace(/[<>]/g, '') : '') + '</td>' +
+            '<td class="no-print"><button class="btn btn-ghost btn-sm" onclick="__delEntry(\'' + e.date + '\')">✕</button></td></tr>';
+        }).join('');
+      }
+      updateSummary(log);
+      drawTrend(log);
+    }
+
+    function updateSummary(log) {
+      var startEl = document.getElementById('statStart'),
+          nowEl = document.getElementById('statNow'),
+          lostEl = document.getElementById('statLost'),
+          bar = document.getElementById('progressBar'),
+          txt = document.getElementById('progressText');
+      if (!log.length) {
+        startEl.textContent = '—'; nowEl.textContent = '—'; lostEl.textContent = '0.0';
+        bar.style.width = '0%';
+        txt.textContent = GOAL == null
+          ? 'Set your goal weight and log your first weight to start tracking.'
+          : 'Log your first weight to start tracking.';
+        return;
+      }
+      var start = log[0].kg, now = log[log.length - 1].kg, lost = start - now;
+      startEl.textContent = start.toFixed(1);
+      nowEl.textContent = now.toFixed(1);
+      lostEl.textContent = (lost >= 0 ? '' : '+') + lost.toFixed(1);
+
+      if (GOAL == null) {
+        bar.style.width = '0%';
+        txt.innerHTML = 'You\'ve lost <strong>' + lost.toFixed(1) + ' kg</strong> so far. Set a goal weight above to track progress to it.';
+        return;
+      }
+      var span = Math.max(0.1, start - GOAL);
+      var pct = Math.max(0, Math.min(100, (lost / span) * 100));
+      bar.style.width = pct.toFixed(0) + '%';
+      var toGoal = (now - GOAL);
+      txt.innerHTML = toGoal > 0
+        ? 'You\'ve lost <strong>' + lost.toFixed(1) + ' kg</strong> — <strong>' + toGoal.toFixed(1) + ' kg</strong> to your ' + GOAL.toFixed(1) + ' kg goal (' + pct.toFixed(0) + '% there).'
+        : '🎉 Goal reached — you\'re at or below ' + GOAL.toFixed(1) + ' kg. Keep it healthy!';
+    }
+
+    function drawTrend(log) {
+      var c = document.getElementById('trend'), ctx = c.getContext('2d');
+      var W = c.width, H = c.height, padL = 38, padR = 14, padT = 14, padB = 26;
+      ctx.clearRect(0, 0, W, H);
+      ctx.font = '11px Inter, sans-serif';
+
+      var weights = log.map(function (e) { return e.kg; });
+      var pool = weights.slice();
+      if (GOAL != null) pool.push(GOAL);
+      var lo, hi;
+      if (pool.length) { lo = Math.min.apply(null, pool); hi = Math.max.apply(null, pool); }
+      else { lo = 60; hi = 90; }   // neutral default before anything is entered
+      lo = Math.floor(lo - 0.5); hi = Math.ceil(hi + 0.5);
+      if (hi - lo < 2) hi = lo + 2;
+
+      function x(i, n) { return padL + (n <= 1 ? 0 : (i / (n - 1)) * (W - padL - padR)); }
+      function y(v) { return padT + (1 - (v - lo) / (hi - lo)) * (H - padT - padB); }
+
+      // y gridlines
+      ctx.strokeStyle = '#EDE7DB'; ctx.fillStyle = '#8A97A0'; ctx.lineWidth = 1;
+      for (var g = lo; g <= hi; g++) {
+        var gy = y(g);
+        ctx.beginPath(); ctx.moveTo(padL, gy); ctx.lineTo(W - padR, gy); ctx.stroke();
+        ctx.fillText(g + '', 6, gy + 3);
+      }
+      // goal line (only if a goal is set)
+      if (GOAL != null) {
+        ctx.strokeStyle = '#1F8A70'; ctx.setLineDash([5, 4]); ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.moveTo(padL, y(GOAL)); ctx.lineTo(W - padR, y(GOAL)); ctx.stroke();
+        ctx.setLineDash([]);
+      }
+
+      if (!log.length) {
+        ctx.fillStyle = '#8A97A0'; ctx.fillText('Add weights to see your trend', padL + 8, H / 2);
+        return;
+      }
+      // line
+      var n = log.length;
+      ctx.strokeStyle = '#E0795A'; ctx.lineWidth = 2.5; ctx.beginPath();
+      log.forEach(function (e, i) { var px = x(i, n), py = y(e.kg); i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); });
+      ctx.stroke();
+      // dots
+      ctx.fillStyle = '#E0795A';
+      log.forEach(function (e, i) { ctx.beginPath(); ctx.arc(x(i, n), y(e.kg), 3.5, 0, 7); ctx.fill(); });
+    }
+
+    /* ---------------- Backup / restore ---------------- */
+    document.getElementById('exportBtn').addEventListener('click', async function () {
+      var data = await S.exportAll();
+      var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = '3week-reset-backup-' + todayStr() + '.json';
+      a.click(); URL.revokeObjectURL(a.href);
+    });
+    document.getElementById('importFile').addEventListener('change', function (ev) {
+      var file = ev.target.files[0]; if (!file) return;
+      var reader = new FileReader();
+      reader.onload = async function () {
+        try {
+          await S.importAll(JSON.parse(reader.result));
+          await loadGoal(); await loadHabits(habitDate.value); await render();
+          alert('Backup restored.');
+        } catch (e) { alert('Could not read that file.'); }
+      };
+      reader.readAsText(file);
+    });
+    document.getElementById('resetBtn').addEventListener('click', async function () {
+      if (!confirm('Erase all tracker data on this device? This cannot be undone.')) return;
+      await S.clearAll();
+      await loadGoal(); await loadHabits(habitDate.value); await render();
+    });
+
+    /* ---------------- init ---------------- */
+    (async function () { await loadGoal(); await loadHabits(habitDate.value); await render(); })();
+  })();
+  </script>
+</body>
+</html>

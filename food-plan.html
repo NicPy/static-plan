@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Plan — 3 Weeks of Meals</title>
+  <meta name="description" content="A 3-week Mediterranean food plan for Israel in summer: breakfast, lunch, dinner and a snack each day, with portions, calories and swaps." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="dot">◆</span> 3-Week Reset</a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="food-plan.html">Food Plan</a>
+        <a href="nutrition.html">Theory</a>
+        <a href="exercises.html">Exercises</a>
+        <a href="shopping-list.html">Shopping</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="tips.html">Tips</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Mediterranean · seasonal · Israel summer</span>
+      <h1>Your 3-week food plan</h1>
+      <p class="lead">Three meals plus one snack a day, built from in-season Israeli food you actually like to eat. Every meal shows a portion, calories and an easy swap — so you're never stuck.</p>
+    </div>
+  </section>
+
+  <!-- DAILY TARGET BANNER -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="card">
+        <div class="flex between items-center wrap gap-2">
+          <div>
+            <h3 class="mt-0 mb-0">Daily target</h3>
+            <p class="muted mb-0">Each day lands around <strong>1,600–1,700 kcal</strong> and <strong>150–170 g protein</strong>.</p>
+          </div>
+          <div class="macro-pills">
+            <span class="macro-pill kcal"><b>~1,650</b> kcal</span>
+            <span class="macro-pill protein"><b>170 g</b> protein</span>
+            <span class="macro-pill carbs"><b>130 g</b> carbs</span>
+            <span class="macro-pill fat"><b>50 g</b> fat</span>
+            <span class="macro-pill water"><b>3 L</b> water</span>
+          </div>
+        </div>
+      </div>
+      <div class="btn-row mt-2 no-print">
+        <button class="btn btn-ghost" onclick="window.print()">🖨️ Print this plan</button>
+        <a class="btn btn-ghost" href="shopping-list.html">🛒 Matching shopping list</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO USE -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="grid cols-3">
+        <div class="callout good" style="margin:0"><span class="ci">🥩</span><div><strong>Protein &amp; veg first.</strong> Eat those before the carbs at every meal — you'll fill up and naturally eat less.</div></div>
+        <div class="callout info" style="margin:0"><span class="ci">🔁</span><div><strong>Swap freely.</strong> Use the “alt:” option, or trade any meal for another in the same column — they're matched in calories &amp; protein.</div></div>
+        <div class="callout warn" style="margin:0"><span class="ci">💧</span><div><strong>Summer hydration.</strong> 3 L water/day. Thirst masquerades as hunger in the heat — drink a glass before snacking.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE TABLES -->
+  <section class="section">
+    <div class="container">
+      <div data-tabs>
+        <div class="tabs no-print">
+          <button class="tab" data-target="w1">Week 1</button>
+          <button class="tab" data-target="w2">Week 2</button>
+          <button class="tab" data-target="w3">Week 3 · final push</button>
+        </div>
+
+        <!-- WEEK 1 -->
+        <div data-panel="w1">
+          <h3 style="color:var(--teal-dark)">Week 1 — settle in</h3>
+          <div class="table-wrap">
+            <table class="day-table">
+              <thead><tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th><th>Snack</th></tr></thead>
+              <tbody>
+                <tr>
+                  <th>Sun<br><small>≈1,650</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Shakshuka</strong> · 2 eggs in tomato-pepper sauce</li><li>½ whole-wheat pita</li></ul><span class="kcal-tag">~420 kcal</span><span class="alt">alt: 3-egg veggie omelette + 1 toast</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Grilled chicken</strong> 150 g</li><li>freekeh ½ cup</li><li>roasted summer veg</li></ul><span class="kcal-tag">~520 kcal</span><span class="alt">alt: quinoa instead of freekeh</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken &amp; big salad</strong> 180 g</li><li>Israeli salad</li><li>grilled zucchini/eggplant</li></ul><span class="kcal-tag">~470 kcal</span><span class="alt">alt: grilled turkey steak</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Greek yogurt 5%</strong> 200 g</li><li>1 peach</li></ul><span class="kcal-tag">~210 kcal</span><span class="alt">alt: plum + 10 almonds</span></td>
+                </tr>
+                <tr>
+                  <th>Mon<br><small>≈1,640</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Cottage 5%</strong> 200 g</li><li>Israeli salad</li><li>1 whole-grain slice</li><li>1 tsp tahini</li></ul><span class="kcal-tag">~400 kcal</span><span class="alt">alt: 200 g Greek yogurt base</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Tuna–white bean salad</strong> 1 can tuna</li><li>½ can beans</li><li>veg</li><li>lemon</li><li>1 tsp oil</li></ul><span class="kcal-tag">~480 kcal</span><span class="alt">alt: chickpeas for beans</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Baked salmon</strong> 150 g</li><li>quinoa ½ cup</li><li>roasted broccoli</li></ul><span class="kcal-tag">~540 kcal</span><span class="alt">alt: tilapia (amnoon), add a tsp oil</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Apple</strong></li><li>20 g almonds</li></ul><span class="kcal-tag">~230 kcal</span><span class="alt">alt: pear + 15 g walnuts</span></td>
+                </tr>
+                <tr>
+                  <th>Tue<br><small>≈1,650</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Yogurt bowl</strong> · Greek yogurt 250 g</li><li>30 g granola</li><li>peach</li></ul><span class="kcal-tag">~390 kcal</span><span class="alt">alt: + ½ scoop protein, skip granola</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Turkey rice bowl</strong> 150 g turkey</li><li>brown rice 100 g</li><li>salad</li><li>1 tbsp tahini</li></ul><span class="kcal-tag">~520 kcal</span><span class="alt">alt: chicken breast</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Turkey/beef kebabs</strong> 180 g (5% fat)</li><li>grilled veg</li><li>small salad</li></ul><span class="kcal-tag">~500 kcal</span><span class="alt">alt: chicken thigh skewers</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>2 hard-boiled eggs</strong></li><li>cherry tomatoes</li></ul><span class="kcal-tag">~190 kcal</span><span class="alt">alt: cottage 150 g + cucumber</span></td>
+                </tr>
+                <tr>
+                  <th>Wed<br><small>≈1,660</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Veggie omelette</strong> 3 eggs</li><li>peppers/spinach</li><li>1 toast</li><li>½ avocado</li></ul><span class="kcal-tag">~430 kcal</span><span class="alt">alt: 2 eggs + 3 whites to trim fat</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Tilapia + sweet potato</strong> Tilapia</li><li>sweet potato 150 g fish</li><li>150 g baked sweet potato</li><li>green beans</li></ul><span class="kcal-tag">~510 kcal</span><span class="alt">alt: sea bream (denis)</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken stir-fry</strong> 180 g</li><li>peppers/broccoli/zucchini</li><li>80 g rice</li></ul><span class="kcal-tag">~510 kcal</span><span class="alt">alt: swap rice for cauliflower rice</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Cottage 5%</strong> 150 g</li><li>cucumber sticks</li></ul><span class="kcal-tag">~160 kcal</span><span class="alt">alt: Greek yogurt 150 g</span></td>
+                </tr>
+                <tr>
+                  <th>Thu<br><small>≈1,640</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Labneh</strong> 150 g</li><li>za'atar &amp; olive oil</li><li>cucumber/tomato</li><li>½ pita</li></ul><span class="kcal-tag">~400 kcal</span><span class="alt">alt: add 1 boiled egg for protein</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken shawarma salad</strong> 150 g spiced chicken</li><li>chopped salad</li><li>2 tbsp hummus</li></ul><span class="kcal-tag">~520 kcal</span><span class="alt">alt: add ½ pita if training today</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Grilled white fish</strong> 180 g</li><li>grilled veg</li><li>side salad</li></ul><span class="kcal-tag">~470 kcal</span><span class="alt">alt: shrimp/calamari if you eat it</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Watermelon</strong> 250 g</li><li>Bulgarian/feta 40 g</li></ul><span class="kcal-tag">~200 kcal</span><span class="alt">alt: melon + cottage</span></td>
+                </tr>
+                <tr>
+                  <th>Fri<br><small>≈1,650</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Overnight oats</strong> 50 g oats</li><li>250 g yogurt</li><li>1 tbsp peanut butter</li><li>cinnamon</li></ul><span class="kcal-tag">~430 kcal</span><span class="alt">alt: + ½ scoop protein, less PB</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken + bulgur</strong> Chicken</li><li>bulgur 150 g</li><li>bulgur ½ cup</li><li>roasted veg</li></ul><span class="kcal-tag">~510 kcal</span><span class="alt">alt: freekeh or quinoa</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Beef burger, no bun</strong> 150 g (5%) over salad</li><li>grilled onion</li><li>2 tbsp hummus</li></ul><span class="kcal-tag">~500 kcal</span><span class="alt">alt: turkey burger</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Protein shake</strong> 1 scoop</li><li>½ banana</li></ul><span class="kcal-tag">~220 kcal</span><span class="alt">alt: cottage 200 g + berries</span></td>
+                </tr>
+                <tr>
+                  <th>Sat<br><small>Shabbat</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Eggs + smoked salmon</strong> Eggs</li><li>smoked salmon 2 eggs</li><li>80 g salmon</li><li>tomato</li><li>½ pita</li></ul><span class="kcal-tag">~410 kcal</span><span class="alt">alt: shakshuka</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Shabbat lunch</strong> · roast chicken (skin off) 180 g</li><li>quinoa salad</li><li>plenty of veg</li></ul><span class="kcal-tag">~560 kcal</span><span class="alt">tip: load the plate with salad first</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Light dinner</strong> · big salad</li><li>tuna or labneh</li><li>1 tsp oil</li></ul><span class="kcal-tag">~380 kcal</span><span class="alt">alt: leftover roast chicken + salad</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Veg sticks + hummus</strong> Veg sticks</li><li>hummus 3 tbsp</li></ul><span class="kcal-tag">~180 kcal</span><span class="alt">alt: fruit in season</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="muted mt-1"><small>Portions are cooked weights unless noted. ½ cup cooked grain ≈ 90 g. 1 “can tuna” ≈ 120 g drained.</small></p>
+        </div>
+
+        <!-- WEEK 2 -->
+        <div data-panel="w2">
+          <h3 style="color:var(--teal-dark)">Week 2 — build momentum</h3>
+          <div class="table-wrap">
+            <table class="day-table">
+              <thead><tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th><th>Snack</th></tr></thead>
+              <tbody>
+                <tr>
+                  <th>Sun<br><small>≈1,640</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Cottage 5%</strong> 200 g</li><li>sliced tomato</li><li>1 whole-grain slice</li><li>olives</li></ul><span class="kcal-tag">~390 kcal</span><span class="alt">alt: labneh + za'atar</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken + quinoa</strong> Chicken</li><li>quinoa 150 g</li><li>quinoa ½ cup</li><li>roasted eggplant &amp; pepper</li></ul><span class="kcal-tag">~520 kcal</span><span class="alt">alt: bulgur</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Salmon + salad</strong> Salmon</li><li>salad 150 g baked</li><li>large Greek salad</li><li>1 tsp oil</li></ul><span class="kcal-tag">~510 kcal</span><span class="alt">alt: mackerel/sardines</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Greek yogurt</strong> 200 g</li><li>plum</li></ul><span class="kcal-tag">~210 kcal</span><span class="alt">alt: grapes + cottage</span></td>
+                </tr>
+                <tr>
+                  <th>Mon<br><small>≈1,650</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Shakshuka</strong> 2 eggs</li><li>½ pita</li></ul><span class="kcal-tag">~420 kcal</span><span class="alt">alt: + 40 g white cheese</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Lentil &amp; veg stew</strong> 1.5 cups</li><li>side salad</li><li>100 g grilled chicken</li></ul><span class="kcal-tag">~520 kcal</span><span class="alt">alt: 40 g feta instead of chicken (veg day)</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken stir-fry</strong> 180 g</li><li>lots of veg</li><li>80 g rice</li></ul><span class="kcal-tag">~510 kcal</span><span class="alt">alt: zoodles, no rice</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Apple + almonds</strong> Apple</li><li>almonds 20 g</li></ul><span class="kcal-tag">~230 kcal</span><span class="alt">alt: peach + walnuts</span></td>
+                </tr>
+                <tr>
+                  <th>Tue<br><small>≈1,660</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Yogurt + oats</strong> Yogurt</li><li>oats 250 g Greek yogurt</li><li>30 g oats</li><li>berries</li></ul><span class="kcal-tag">~390 kcal</span><span class="alt">alt: + ½ scoop protein</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Tuna salad pita</strong> 1 can tuna</li><li>veg</li><li>1 tbsp light mayo in ½ ww pita</li><li>greens</li></ul><span class="kcal-tag">~490 kcal</span><span class="alt">alt: egg salad with 3 eggs</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Turkey kebabs</strong> 180 g</li><li>grilled veg</li><li>tahini</li><li>salad</li></ul><span class="kcal-tag">~500 kcal</span><span class="alt">alt: chicken skewers</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Cottage 150 g + cucumber</strong> Cottage 150 g</li><li>cucumber</li></ul><span class="kcal-tag">~160 kcal</span><span class="alt">alt: 2 boiled eggs</span></td>
+                </tr>
+                <tr>
+                  <th>Wed<br><small>≈1,650</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Omelette + avocado</strong> Omelette</li><li>avocado 3 eggs</li><li>spinach</li><li>½ avocado</li><li>1 toast</li></ul><span class="kcal-tag">~430 kcal</span><span class="alt">alt: 2 eggs + 3 whites</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken + sweet potato</strong> Chicken</li><li>sweet potato 150 g</li><li>150 g baked sweet potato</li><li>salad</li></ul><span class="kcal-tag">~520 kcal</span><span class="alt">alt: regular potato, same size</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Grilled fish (denis)</strong> 180 g</li><li>grilled zucchini/eggplant</li><li>salad</li></ul><span class="kcal-tag">~470 kcal</span><span class="alt">alt: sea bass</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Watermelon + feta</strong> Watermelon</li><li>feta 250 g</li><li>40 g</li></ul><span class="kcal-tag">~200 kcal</span><span class="alt">alt: melon + cottage</span></td>
+                </tr>
+                <tr>
+                  <th>Thu<br><small>≈1,640</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Labneh bowl</strong> 150 g</li><li>cucumber/tomato</li><li>olive oil</li><li>½ pita</li></ul><span class="kcal-tag">~400 kcal</span><span class="alt">alt: + 1 boiled egg</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken shawarma salad</strong> 150 g</li><li>salad</li><li>2 tbsp hummus</li></ul><span class="kcal-tag">~520 kcal</span><span class="alt">alt: turkey strips</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Tofu/chicken stir-fry</strong> 200 g tofu (or 180 g chicken)</li><li>veg</li><li>80 g rice</li></ul><span class="kcal-tag">~490 kcal</span><span class="alt">alt: cauliflower rice</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Protein shake + banana</strong> Protein shake</li><li>banana ½</li></ul><span class="kcal-tag">~220 kcal</span><span class="alt">alt: Greek yogurt + honey 1 tsp</span></td>
+                </tr>
+                <tr>
+                  <th>Fri<br><small>≈1,650</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Cottage + tomato + toast</strong> Cottage</li><li>tomato</li><li>toast 200 g</li><li>1 slice</li></ul><span class="kcal-tag">~390 kcal</span><span class="alt">alt: shakshuka</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken + freekeh</strong> Chicken</li><li>freekeh 150 g</li><li>½ cup</li><li>roasted veg</li></ul><span class="kcal-tag">~510 kcal</span><span class="alt">alt: bulgur/quinoa</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Lean burger, no bun</strong> 150 g over salad</li><li>grilled onion</li><li>hummus</li></ul><span class="kcal-tag">~500 kcal</span><span class="alt">alt: turkey burger</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Edamame</strong> 150 g</li><li>lemon/salt</li></ul><span class="kcal-tag">~190 kcal</span><span class="alt">alt: cottage + cucumber</span></td>
+                </tr>
+                <tr>
+                  <th>Sat<br><small>Shabbat</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Eggs + salad + cheese</strong> Eggs</li><li>salad</li><li>cheese 2–3 eggs</li><li>Israeli salad</li><li>40 g white cheese</li></ul><span class="kcal-tag">~420 kcal</span><span class="alt">alt: smoked salmon</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Shabbat lunch</strong> · roast chicken 180 g</li><li>roasted veg</li><li>salad</li></ul><span class="kcal-tag">~560 kcal</span><span class="alt">tip: one starch portion, not three</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Light dinner</strong> · big salad</li><li>tuna/labneh</li></ul><span class="kcal-tag">~380 kcal</span><span class="alt">alt: leftover chicken</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Fruit + nuts</strong> Fruit</li><li>nuts in-season fruit</li><li>15 g nuts</li></ul><span class="kcal-tag">~190 kcal</span><span class="alt">alt: veg + hummus</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- WEEK 3 -->
+        <div data-panel="w3">
+          <h3 style="color:var(--terracotta)">Week 3 — final push (slightly leaner starches)</h3>
+          <div class="callout warn"><span class="ci">🏁</span><div><strong>Small tweak this week:</strong> trim the starchy carbs a touch (smaller grain portions, swap one rice/potato for extra veg or cauliflower rice) while keeping protein high. This nudges the deficit for a strong finish without going hungry. Keep water up — you may drop a little water weight.</div></div>
+          <div class="table-wrap">
+            <table class="day-table">
+              <thead><tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th><th>Snack</th></tr></thead>
+              <tbody>
+                <tr>
+                  <th>Sun<br><small>≈1,550</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Greek yogurt + berries</strong> Greek yogurt</li><li>berries 250 g</li><li>20 g nuts</li></ul><span class="kcal-tag">~340 kcal</span><span class="alt">alt: cottage + tomato</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken + extra veg</strong> Chicken</li><li>extra veg 170 g</li><li>small ⅓ cup quinoa</li><li>big roasted veg</li></ul><span class="kcal-tag">~480 kcal</span><span class="alt">alt: all-veg, no grain, +30 g chicken</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Salmon + salad</strong> Salmon</li><li>salad 150 g</li><li>large salad</li><li>1 tsp oil</li></ul><span class="kcal-tag">~470 kcal</span><span class="alt">alt: white fish + tahini</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Cottage 5%</strong> 200 g</li><li>cucumber</li></ul><span class="kcal-tag">~200 kcal</span><span class="alt">alt: 2 boiled eggs</span></td>
+                </tr>
+                <tr>
+                  <th>Mon<br><small>≈1,560</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Veg omelette</strong> 3 eggs</li><li>spinach/pepper</li><li>1 thin toast</li></ul><span class="kcal-tag">~340 kcal</span><span class="alt">alt: ½ avocado, skip toast</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Tuna–bean salad</strong> 1 can tuna</li><li>½ can beans</li><li>big salad</li></ul><span class="kcal-tag">~470 kcal</span><span class="alt">alt: chickpeas</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken + cauli-rice stir-fry</strong> Chicken</li><li>cauli-rice stir-fry 180 g</li><li>lots of veg</li></ul><span class="kcal-tag">~470 kcal</span><span class="alt">alt: 60 g real rice</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Greek yogurt + plum</strong> Greek yogurt</li><li>plum 200 g</li></ul><span class="kcal-tag">~210 kcal</span><span class="alt">alt: watermelon + feta</span></td>
+                </tr>
+                <tr>
+                  <th>Tue<br><small>≈1,560</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Cottage + tomato</strong> Cottage</li><li>tomato 250 g</li><li>olives</li><li>1 thin toast</li></ul><span class="kcal-tag">~360 kcal</span><span class="alt">alt: labneh + cucumber</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Turkey salad bowl</strong> 170 g</li><li>big salad</li><li>1 tbsp tahini (no grain)</li></ul><span class="kcal-tag">~460 kcal</span><span class="alt">alt: + ⅓ cup bulgur if training</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Turkey kebabs + veg</strong> Turkey kebabs</li><li>veg 180 g</li><li>grilled veg</li><li>salad</li></ul><span class="kcal-tag">~480 kcal</span><span class="alt">alt: chicken</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Protein shake</strong> 1 scoop</li><li>water</li></ul><span class="kcal-tag">~150 kcal</span><span class="alt">alt: 2 eggs</span></td>
+                </tr>
+                <tr>
+                  <th>Wed<br><small>≈1,560</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Shakshuka</strong> 2 eggs (no pita)</li><li>side salad</li></ul><span class="kcal-tag">~330 kcal</span><span class="alt">alt: + ½ pita on a training day</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken + sweet potato (small)</strong> Chicken</li><li>sweet potato (small) 170 g</li><li>100 g</li><li>green beans</li></ul><span class="kcal-tag">~480 kcal</span><span class="alt">alt: extra veg instead of potato</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Grilled fish + salad</strong> Grilled fish</li><li>salad 180 g</li><li>grilled veg</li></ul><span class="kcal-tag">~460 kcal</span><span class="alt">alt: denis/sea bass</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Watermelon + feta</strong> Watermelon</li><li>feta 250 g</li><li>40 g</li></ul><span class="kcal-tag">~200 kcal</span><span class="alt">alt: cottage + melon</span></td>
+                </tr>
+                <tr>
+                  <th>Thu<br><small>≈1,550</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Yogurt bowl</strong> 250 g Greek</li><li>20 g granola</li><li>peach</li></ul><span class="kcal-tag">~340 kcal</span><span class="alt">alt: + ½ scoop protein</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken shawarma salad</strong> 160 g</li><li>salad</li><li>1 tbsp hummus</li></ul><span class="kcal-tag">~470 kcal</span><span class="alt">alt: turkey strips</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Tofu/chicken + veg</strong> Tofu/chicken</li><li>veg 200 g tofu (or 180 g chicken)</li><li>veg, light rice 50 g</li></ul><span class="kcal-tag">~470 kcal</span><span class="alt">alt: cauliflower rice</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Cottage + cucumber</strong> Cottage</li><li>cucumber 150 g</li></ul><span class="kcal-tag">~160 kcal</span><span class="alt">alt: edamame</span></td>
+                </tr>
+                <tr>
+                  <th>Fri<br><small>≈1,560</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Labneh + veg</strong> Labneh</li><li>veg 150 g</li><li>cucumber/tomato</li><li>½ thin pita</li></ul><span class="kcal-tag">~360 kcal</span><span class="alt">alt: 1 boiled egg added</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Chicken + small grain</strong> Chicken</li><li>small grain 170 g</li><li>⅓ cup freekeh</li><li>roasted veg</li></ul><span class="kcal-tag">~480 kcal</span><span class="alt">alt: all veg, no grain</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Lean burger, no bun</strong> 150 g over salad</li><li>hummus 1 tbsp</li></ul><span class="kcal-tag">~470 kcal</span><span class="alt">alt: turkey burger</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Greek yogurt + berries</strong> Greek yogurt</li><li>berries 200 g</li></ul><span class="kcal-tag">~210 kcal</span><span class="alt">alt: protein shake</span></td>
+                </tr>
+                <tr>
+                  <th>Sat<br><small>Shabbat</small></th>
+                  <td><ul class="food-list"><li class="head"><strong>Eggs + salad + cheese</strong> Eggs</li><li>salad</li><li>cheese 2–3 eggs</li><li>Israeli salad</li><li>40 g white cheese</li></ul><span class="kcal-tag">~400 kcal</span><span class="alt">alt: smoked salmon</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Shabbat lunch</strong> · roast chicken 180 g</li><li>1 starch portion</li><li>lots of salad</li></ul><span class="kcal-tag">~540 kcal</span><span class="alt">tip: enjoy it — just one plate, salad first</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Light dinner</strong> · big salad</li><li>tuna/labneh</li></ul><span class="kcal-tag">~360 kcal</span><span class="alt">alt: leftover chicken</span></td>
+                  <td><ul class="food-list"><li class="head"><strong>Fruit in season</strong></li><li>15 g nuts</li></ul><span class="kcal-tag">~180 kcal</span><span class="alt">alt: veg + hummus</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHABBAT / SOCIAL -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="grid cols-2">
+        <div class="card">
+          <h3 class="mt-0">🕯️ Shabbat &amp; family meals</h3>
+          <p class="mb-0">You don't have to be the weird one at the table. Strategy: fill half your plate with salad and veg <em>first</em>, take one fist-size portion of the starch (challah, rice, potatoes — pick one, not all three), a palm or two of protein, and skip seconds. Have the fruit, skip the cake — or take a few bites and stop. One relaxed meal won't undo a week; a whole day of grazing will.</p>
+        </div>
+        <div class="card">
+          <h3 class="mt-0">🍽️ Eating out / hummusiya</h3>
+          <p class="mb-0">Grilled meat or fish + salads is your friend — most Israeli grills do this perfectly. At a hummusiya, share one hummus with a friend and load up on the salad and a single pita rather than a whole bowl each. Ask for dressing/tahini on the side. Water or soda, not a soft drink or beer. <a href="tips.html">More tactics →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HYDRATION & EXTRAS -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="card">
+        <h3 class="mt-0">Free foods &amp; drinks (eat/drink freely)</h3>
+        <p>When you're hungry between meals, these barely cost calories and keep you full:</p>
+        <ul class="pill-list">
+          <li>Cucumber</li><li>Tomato</li><li>Pepper</li><li>Lettuce / leaves</li><li>Celery</li><li>Carrot</li><li>Radish</li><li>Pickles</li><li>Lemon</li><li>Herbs</li><li>Water</li><li>Soda water</li><li>Black coffee</li><li>Unsweetened tea</li><li>Iced coffee (no sugar)</li>
+        </ul>
+        <p class="muted mb-0 mt-2"><small>Coffee is fine (1–3/day) — just watch what goes in it. A daily diet soft drink is OK if it stops you reaching for sugar.</small></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p><strong>3-Week Reset</strong> — Food Plan · summer <span data-year>2026</span>.</p>
+      <p>Calorie figures are approximate, for guidance. Adjust portions ±10% to your hunger and energy — if you're exhausted, eat a bit more protein/veg, never drop below ~1,500 kcal. Educational information, not medical advice.</p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

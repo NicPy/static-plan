@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping List — Weekly Groceries</title>
+  <meta name="description" content="Weekly grocery lists matched to the 3-week food plan, grouped by aisle. Tick items as you shop — it remembers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="dot">◆</span> 3-Week Reset</a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="food-plan.html">Food Plan</a>
+        <a href="nutrition.html">Theory</a>
+        <a href="exercises.html">Exercises</a>
+        <a href="shopping-list.html">Shopping</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="tips.html">Tips</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Stock the kitchen</span>
+      <h1>Shopping list</h1>
+      <p class="lead">Sized to the food plan and grouped by aisle. Tick items as you go — your checkmarks are saved on this device. Week 1 stocks the pantry; Weeks 2 &amp; 3 are mostly fresh top-ups.</p>
+      <div class="btn-row mt-2 no-print">
+        <button class="btn btn-ghost" onclick="window.print()">🖨️ Print</button>
+        <a class="btn btn-ghost" href="food-plan.html">← Back to food plan</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div data-tabs>
+        <div class="tabs no-print">
+          <button class="tab" data-target="s1">Week 1 · full shop</button>
+          <button class="tab" data-target="s2">Week 2 · top-up</button>
+          <button class="tab" data-target="s3">Week 3 · top-up</button>
+        </div>
+
+        <!-- WEEK 1 -->
+        <div data-panel="s1">
+          <h3 style="color:var(--teal-dark)">Week 1 — the big shop</h3>
+          <p class="muted">Quantities are for one person for the week. Buy the pantry &amp; fats once; they last all three weeks.</p>
+          <div class="grid cols-2" data-checklist="shop-w1">
+            <div class="card">
+              <h3 class="mt-0">🥬 Produce</h3>
+              <ul class="checklist">
+                <li><input type="checkbox" id="w1p1" data-item="tomatoes"><label for="w1p1">Tomatoes — ~2 kg</label></li>
+                <li><input type="checkbox" id="w1p2" data-item="cucumbers"><label for="w1p2">Cucumbers — ~1.5 kg</label></li>
+                <li><input type="checkbox" id="w1p3" data-item="peppers"><label for="w1p3">Bell peppers — 5–6</label></li>
+                <li><input type="checkbox" id="w1p4" data-item="onions"><label for="w1p4">Onions — 4–5</label></li>
+                <li><input type="checkbox" id="w1p5" data-item="zucchini"><label for="w1p5">Zucchini — 4</label></li>
+                <li><input type="checkbox" id="w1p6" data-item="eggplant"><label for="w1p6">Eggplant — 2–3</label></li>
+                <li><input type="checkbox" id="w1p7" data-item="broccoli"><label for="w1p7">Broccoli — 2 heads</label></li>
+                <li><input type="checkbox" id="w1p8" data-item="greenbeans"><label for="w1p8">Green beans — 300 g</label></li>
+                <li><input type="checkbox" id="w1p9" data-item="sweetpotato"><label for="w1p9">Sweet potato — 3</label></li>
+                <li><input type="checkbox" id="w1p10" data-item="lettuce"><label for="w1p10">Lettuce / leaves — 2</label></li>
+                <li><input type="checkbox" id="w1p11" data-item="spinach"><label for="w1p11">Spinach — 200 g</label></li>
+                <li><input type="checkbox" id="w1p12" data-item="cherrytom"><label for="w1p12">Cherry tomatoes — 250 g</label></li>
+                <li><input type="checkbox" id="w1p13" data-item="avocado"><label for="w1p13">Avocado — 2</label></li>
+                <li><input type="checkbox" id="w1p14" data-item="lemons"><label for="w1p14">Lemons — 4</label></li>
+                <li><input type="checkbox" id="w1p15" data-item="garlic"><label for="w1p15">Garlic — 1 head</label></li>
+                <li><input type="checkbox" id="w1p16" data-item="herbs"><label for="w1p16">Parsley + mint — 1 bunch each</label></li>
+              </ul>
+              <h3>🍉 Fruit (in season)</h3>
+              <ul class="checklist">
+                <li><input type="checkbox" id="w1f1" data-item="peaches"><label for="w1f1">Peaches / nectarines — 6</label></li>
+                <li><input type="checkbox" id="w1f2" data-item="plums"><label for="w1f2">Plums — 6</label></li>
+                <li><input type="checkbox" id="w1f3" data-item="apples"><label for="w1f3">Apples — 4</label></li>
+                <li><input type="checkbox" id="w1f4" data-item="watermelon"><label for="w1f4">Watermelon — 1 small</label></li>
+                <li><input type="checkbox" id="w1f5" data-item="grapes"><label for="w1f5">Grapes — 500 g</label></li>
+                <li><input type="checkbox" id="w1f6" data-item="bananas"><label for="w1f6">Bananas — 4</label></li>
+                <li><input type="checkbox" id="w1f7" data-item="berries"><label for="w1f7">Berries — 1 punnet (optional)</label></li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3 class="mt-0">🍗 Protein &amp; dairy</h3>
+              <ul class="checklist">
+                <li><input type="checkbox" id="w1m1" data-item="chicken"><label for="w1m1">Chicken breast — 1 kg</label></li>
+                <li><input type="checkbox" id="w1m2" data-item="turkey"><label for="w1m2">Turkey breast / steak — 500 g</label></li>
+                <li><input type="checkbox" id="w1m3" data-item="ground"><label for="w1m3">Ground turkey/beef 5% — 500 g</label></li>
+                <li><input type="checkbox" id="w1m4" data-item="salmon"><label for="w1m4">Salmon fillet — 300 g</label></li>
+                <li><input type="checkbox" id="w1m5" data-item="whitefish"><label for="w1m5">Tilapia / white fish — 600 g</label></li>
+                <li><input type="checkbox" id="w1m6" data-item="tuna"><label for="w1m6">Canned tuna in water — 4 cans</label></li>
+                <li><input type="checkbox" id="w1m7" data-item="smokedsalmon"><label for="w1m7">Smoked salmon — 100 g</label></li>
+                <li><input type="checkbox" id="w1m8" data-item="eggs"><label for="w1m8">Eggs — 18</label></li>
+                <li><input type="checkbox" id="w1m9" data-item="cottage"><label for="w1m9">Cottage cheese 5% — 3 tubs</label></li>
+                <li><input type="checkbox" id="w1m10" data-item="greekyog"><label for="w1m10">Greek yogurt 5% — 1 kg</label></li>
+                <li><input type="checkbox" id="w1m11" data-item="labneh"><label for="w1m11">Labneh — 1 tub</label></li>
+                <li><input type="checkbox" id="w1m12" data-item="whitecheese"><label for="w1m12">White cheese / feta — 250 g</label></li>
+                <li><input type="checkbox" id="w1m13" data-item="tofu"><label for="w1m13">Tofu — 1 block (optional)</label></li>
+                <li><input type="checkbox" id="w1m14" data-item="protein"><label for="w1m14">Protein powder — optional</label></li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3 class="mt-0">🌾 Pantry &amp; grains</h3>
+              <ul class="checklist">
+                <li><input type="checkbox" id="w1g1" data-item="pita"><label for="w1g1">Whole-wheat pita — 1 pack</label></li>
+                <li><input type="checkbox" id="w1g2" data-item="bread"><label for="w1g2">Whole-grain bread — 1 loaf</label></li>
+                <li><input type="checkbox" id="w1g3" data-item="freekeh"><label for="w1g3">Freekeh / bulgur — 1 pack</label></li>
+                <li><input type="checkbox" id="w1g4" data-item="quinoa"><label for="w1g4">Quinoa — 1 pack</label></li>
+                <li><input type="checkbox" id="w1g5" data-item="rice"><label for="w1g5">Brown rice — 1 pack</label></li>
+                <li><input type="checkbox" id="w1g6" data-item="oats"><label for="w1g6">Oats — 1 pack</label></li>
+                <li><input type="checkbox" id="w1g7" data-item="whitebeans"><label for="w1g7">White beans — 1 can</label></li>
+                <li><input type="checkbox" id="w1g8" data-item="chickpeas"><label for="w1g8">Chickpeas — 2 cans</label></li>
+                <li><input type="checkbox" id="w1g9" data-item="hummus"><label for="w1g9">Hummus — 1 tub</label></li>
+                <li><input type="checkbox" id="w1g10" data-item="granola"><label for="w1g10">Granola — 1 small bag</label></li>
+                <li><input type="checkbox" id="w1g11" data-item="olives"><label for="w1g11">Olives — 1 jar</label></li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3 class="mt-0">🫒 Fats &amp; extras (buy once)</h3>
+              <ul class="checklist">
+                <li><input type="checkbox" id="w1x1" data-item="oliveoil"><label for="w1x1">Olive oil</label></li>
+                <li><input type="checkbox" id="w1x2" data-item="tahini"><label for="w1x2">Raw tahini — 1 jar</label></li>
+                <li><input type="checkbox" id="w1x3" data-item="nuts"><label for="w1x3">Almonds + walnuts — 200 g</label></li>
+                <li><input type="checkbox" id="w1x4" data-item="pb"><label for="w1x4">Peanut butter — 1 jar</label></li>
+                <li><input type="checkbox" id="w1x5" data-item="zaatar"><label for="w1x5">Za'atar</label></li>
+                <li><input type="checkbox" id="w1x6" data-item="spices"><label for="w1x6">Paprika, cumin, black pepper</label></li>
+                <li><input type="checkbox" id="w1x7" data-item="mayo"><label for="w1x7">Light mayo — optional</label></li>
+                <li><input type="checkbox" id="w1x8" data-item="coffee"><label for="w1x8">Coffee / tea</label></li>
+                <li><input type="checkbox" id="w1x9" data-item="sodawater"><label for="w1x9">Soda water — a few bottles</label></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEEK 2 -->
+        <div data-panel="s2">
+          <h3 style="color:var(--teal-dark)">Week 2 — fresh top-up</h3>
+          <p class="muted">Your pantry &amp; fats are stocked. Re-buy perishables and a couple of new items (lentils, denis).</p>
+          <div class="grid cols-2" data-checklist="shop-w2">
+            <div class="card">
+              <h3 class="mt-0">🥬 Produce &amp; fruit</h3>
+              <ul class="checklist">
+                <li><input type="checkbox" id="w2p1" data-item="tomatoes"><label for="w2p1">Tomatoes — ~2 kg</label></li>
+                <li><input type="checkbox" id="w2p2" data-item="cucumbers"><label for="w2p2">Cucumbers — ~1.5 kg</label></li>
+                <li><input type="checkbox" id="w2p3" data-item="peppers"><label for="w2p3">Bell peppers — 5</label></li>
+                <li><input type="checkbox" id="w2p4" data-item="zucchini"><label for="w2p4">Zucchini + eggplant — 3 + 2</label></li>
+                <li><input type="checkbox" id="w2p5" data-item="broccoli"><label for="w2p5">Broccoli / green beans</label></li>
+                <li><input type="checkbox" id="w2p6" data-item="leaves"><label for="w2p6">Lettuce, spinach, herbs</label></li>
+                <li><input type="checkbox" id="w2p7" data-item="onionslemon"><label for="w2p7">Onions, garlic, lemons</label></li>
+                <li><input type="checkbox" id="w2p8" data-item="avocado"><label for="w2p8">Avocado — 2</label></li>
+                <li><input type="checkbox" id="w2p9" data-item="sweetpotato"><label for="w2p9">Sweet potato — 3</label></li>
+                <li><input type="checkbox" id="w2p10" data-item="fruit"><label for="w2p10">Seasonal fruit: peaches, plums, grapes, watermelon</label></li>
+                <li><input type="checkbox" id="w2p11" data-item="bananas"><label for="w2p11">Bananas + apples</label></li>
+                <li><input type="checkbox" id="w2p12" data-item="berries"><label for="w2p12">Berries — 1 punnet</label></li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 class="mt-0">🍗 Protein, dairy &amp; new items</h3>
+              <ul class="checklist">
+                <li><input type="checkbox" id="w2m1" data-item="chicken"><label for="w2m1">Chicken breast — 1 kg</label></li>
+                <li><input type="checkbox" id="w2m2" data-item="turkey"><label for="w2m2">Turkey breast / ground — 700 g</label></li>
+                <li><input type="checkbox" id="w2m3" data-item="salmon"><label for="w2m3">Salmon — 300 g</label></li>
+                <li><input type="checkbox" id="w2m4" data-item="denis"><label for="w2m4">Denis / sea bream — 600 g</label></li>
+                <li><input type="checkbox" id="w2m5" data-item="tuna"><label for="w2m5">Canned tuna — 3 cans</label></li>
+                <li><input type="checkbox" id="w2m6" data-item="eggs"><label for="w2m6">Eggs — 18</label></li>
+                <li><input type="checkbox" id="w2m7" data-item="cottage"><label for="w2m7">Cottage 5% — 3 tubs</label></li>
+                <li><input type="checkbox" id="w2m8" data-item="greekyog"><label for="w2m8">Greek yogurt — 1 kg</label></li>
+                <li><input type="checkbox" id="w2m9" data-item="labneh"><label for="w2m9">Labneh + white cheese</label></li>
+                <li><input type="checkbox" id="w2m10" data-item="lentils"><label for="w2m10">Lentils — 1 pack (new)</label></li>
+                <li><input type="checkbox" id="w2m11" data-item="edamame"><label for="w2m11">Edamame — 1 bag (new)</label></li>
+                <li><input type="checkbox" id="w2m12" data-item="tofu"><label for="w2m12">Tofu — 1 block</label></li>
+                <li><input type="checkbox" id="w2m13" data-item="hummus"><label for="w2m13">Hummus — 1 tub</label></li>
+                <li><input type="checkbox" id="w2m14" data-item="grains"><label for="w2m14">Top up: pita, bread, any grain run low</label></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEEK 3 -->
+        <div data-panel="s3">
+          <h3 style="color:var(--terracotta)">Week 3 — fresh top-up (lean finish)</h3>
+          <p class="muted">Lean into protein &amp; veg, lighter on grains. Re-buy perishables.</p>
+          <div class="grid cols-2" data-checklist="shop-w3">
+            <div class="card">
+              <h3 class="mt-0">🥬 Produce &amp; fruit</h3>
+              <ul class="checklist">
+                <li><input type="checkbox" id="w3p1" data-item="tomcuc"><label for="w3p1">Tomatoes + cucumbers — ~3.5 kg total</label></li>
+                <li><input type="checkbox" id="w3p2" data-item="peppers"><label for="w3p2">Bell peppers — 6</label></li>
+                <li><input type="checkbox" id="w3p3" data-item="greenveg"><label for="w3p3">Zucchini, eggplant, broccoli, green beans — extra (more veg this week)</label></li>
+                <li><input type="checkbox" id="w3p4" data-item="cauliflower"><label for="w3p4">Cauliflower — 1–2 (for cauli-rice)</label></li>
+                <li><input type="checkbox" id="w3p5" data-item="leaves"><label for="w3p5">Lettuce, spinach, herbs</label></li>
+                <li><input type="checkbox" id="w3p6" data-item="onionslemon"><label for="w3p6">Onions, garlic, lemons</label></li>
+                <li><input type="checkbox" id="w3p7" data-item="avocado"><label for="w3p7">Avocado — 1</label></li>
+                <li><input type="checkbox" id="w3p8" data-item="sweetpotato"><label for="w3p8">Sweet potato — 2</label></li>
+                <li><input type="checkbox" id="w3p9" data-item="fruit"><label for="w3p9">Seasonal fruit: peaches, plums, watermelon, berries</label></li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 class="mt-0">🍗 Protein &amp; dairy</h3>
+              <ul class="checklist">
+                <li><input type="checkbox" id="w3m1" data-item="chicken"><label for="w3m1">Chicken breast — 1.2 kg (more this week)</label></li>
+                <li><input type="checkbox" id="w3m2" data-item="turkey"><label for="w3m2">Turkey breast / ground — 700 g</label></li>
+                <li><input type="checkbox" id="w3m3" data-item="salmon"><label for="w3m3">Salmon — 300 g</label></li>
+                <li><input type="checkbox" id="w3m4" data-item="whitefish"><label for="w3m4">White fish — 600 g</label></li>
+                <li><input type="checkbox" id="w3m5" data-item="tuna"><label for="w3m5">Canned tuna — 3 cans</label></li>
+                <li><input type="checkbox" id="w3m6" data-item="eggs"><label for="w3m6">Eggs — 18</label></li>
+                <li><input type="checkbox" id="w3m7" data-item="cottage"><label for="w3m7">Cottage 5% — 3 tubs</label></li>
+                <li><input type="checkbox" id="w3m8" data-item="greekyog"><label for="w3m8">Greek yogurt — 1.5 kg</label></li>
+                <li><input type="checkbox" id="w3m9" data-item="labneh"><label for="w3m9">Labneh + white cheese / feta</label></li>
+                <li><input type="checkbox" id="w3m10" data-item="tofu"><label for="w3m10">Tofu — 1 block</label></li>
+                <li><input type="checkbox" id="w3m11" data-item="hummus"><label for="w3m11">Hummus — 1 small tub</label></li>
+                <li><input type="checkbox" id="w3m12" data-item="grains"><label for="w3m12">Small top-up only: thin pita, ⅓-portions of grains</label></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout info mt-3"><span class="ci">🛒</span><div><strong>Smart shopping in Israel:</strong> the <em>shuk</em> (Machane Yehuda, Carmel, your local one) is cheapest for in-season produce and herbs — and summer fruit is at its peak and cheapest right now. Buy protein and dairy at the supermarket. Compare cottage/yogurt by the <em>per-100 g</em> protein, and grab whatever fish is freshest that day.</div></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p><strong>3-Week Reset</strong> — Shopping List · summer <span data-year>2026</span>.</p>
+      <p>Checkmarks save to this browser only.</p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+  <script>
+    // Persist every shopping checklist independently (keyed by data-checklist).
+    document.querySelectorAll('[data-checklist]').forEach(function (c) {
+      window.FP.bindChecklist(c, c.getAttribute('data-checklist'));
+    });
+  </script>
+</body>
+</html>
