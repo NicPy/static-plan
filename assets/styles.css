@@ -212,9 +212,22 @@ tbody tr:nth-child(even) { background: #FBFAF6; }
 /* ---------- Exercise cards ---------- */
 .ex-card { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: start; }
 .ex-card .muscle-thumb { width: 96px; height: 120px; border-radius: 12px; background: var(--sand-2); border: 1px solid var(--line); padding: 6px; }
-.ex-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+/* Vertical rhythm for the right-hand column: one consistent gap, no ad-hoc margins fighting it */
+.ex-body { display: flex; flex-direction: column; gap: 10px; }
+.ex-body > .btn { align-self: flex-start; }   /* keep "Watch demo" its natural width, not stretched */
+.ex-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
 .cue { font-size: .9rem; color: var(--ink-soft); }
 .cue li { margin: .15em 0; }
+
+/* Collapsible "Learn more" form-cue descriptions (hidden by default, animated) */
+.cue-details { margin: 0; }
+.cue-details > summary { display: inline-flex; align-items: center; gap: 7px; list-style: none; cursor: pointer; font-family: var(--font-body); font-weight: 600; font-size: .85rem; color: var(--teal-dark); padding: 6px 14px 6px 15px; background: var(--cream); border: 1px solid var(--line); border-radius: 999px; user-select: none; transition: color .15s ease, background .15s ease, border-color .15s ease; }
+.cue-details > summary::-webkit-details-marker { display: none; }
+.cue-details > summary:hover { color: var(--teal); border-color: var(--teal); background: var(--teal-tint); }
+.cue-details > summary::after { content: ""; flex: none; width: 7px; height: 7px; border-right: 2px solid var(--teal); border-bottom: 2px solid var(--teal); transform: rotate(45deg); transform-origin: 50% 50%; transition: transform .3s ease; }
+.cue-details[open] > summary::after { transform: rotate(225deg); }
+.cue-body { overflow: hidden; }        /* height animated by JS */
+.cue-body .cue { margin: 10px 0 0; }
 
 /* muscle map highlight states (SVG) */
 .mz { fill: #E3DCCD; stroke: #C9BFA9; stroke-width: 1.2; transition: fill .2s; }
@@ -348,6 +361,7 @@ input:focus, textarea:focus, select:focus { outline: 2px solid var(--teal-tint);
   body { background: #fff; font-size: 12px; }
   .card, .table-wrap, .accordion { box-shadow: none; break-inside: avoid; }
   .acc-body { max-height: none !important; padding: 4px 20px 18px !important; }
+  .cue-details > summary { display: none !important; }   /* print the cues, not the toggle */
   [data-panel] { display: block !important; }   /* print every week, not just the open tab */
   .tabs { display: none !important; }
   table { min-width: 0; }
