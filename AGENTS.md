@@ -176,9 +176,15 @@ reload, weight entry updates the chart + progress bar, and print-preview shows a
   D (optional) core circuit + steady cardio. Warm-up + cool-down provided. Example: Sun/Tue/Thu (+Sat).
 - **3-week progression:** Week 1 learn form / lighter; Week 2 add reps or a set; Week 3 heavier or shorter
   rest. Form over load, always.
-- **Exercise library** (~17 moves) each has: a core **muscle map**, sets×reps, which dumbbell, form cues,
-  and a YouTube demo link. Core: weighted crunch, leg raise, bicycle crunch, Russian twist, plank, side
-  plank, dead bug, woodchopper, suitcase carry, mountain climbers. Strength: goblet squat, RDL, one-arm row,
-  floor press, shoulder press, reverse lunge, hip thrust.
+- **Exercise library** (18 moves) each has: a core **muscle map**, sets×reps, which dumbbell, form cues,
+  a YouTube demo link, and a **star** toggle (persisted via `FP.Storage`, shown in the sticky starred bar).
+  Cards are grouped into four `.ex-block`s by **primary muscle**, and the quick filter (Upper / Lower / Side
+  abs) matches on **`data-primary` only**. Each card has an `id="ex-<slug>"` so the session templates and the
+  on-page quick-links can anchor-scroll to it. Blocks: **Upper abs** (crunch, bicycle crunch, serratus jab),
+  **Lower & deep core** (reverse crunch, leg raise, ab walkout, plank), **Side abs / obliques** (russian
+  twist, high-to-low woodchopper, side plank, suitcase carry), **Full-body strength** (goblet squat, RDL,
+  one-arm row, floor press, shoulder press, reverse lunge, hip thrust). Moves adapted from **Jeremy Ethier**
+  carry a `.badge.jeremy` "Jeremy pick" tag (there is no longer a separate belly-fat/Jeremy section — his
+  circuit lives as **Day D** in "Put it together").
 - Summer-training and safety notes included (heat, hydration, never train through sharp pain, expect to feel
   a bit weaker on a cut).

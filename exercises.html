@@ -11,7 +11,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
-<body>
+<body class="has-side-nav">
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="index.html"><span class="dot">◆</span> 3-Week Reset</a>
@@ -28,11 +28,36 @@
     </div>
   </header>
 
+  <!-- Sticky quick-access bar of starred exercises -->
+  <div class="starred-bar no-print" id="starred-bar" hidden>
+    <div class="container starred-inner">
+      <span class="starred-label">★ Starred</span>
+      <div class="starred-chips" id="starred-chips"></div>
+    </div>
+  </div>
+
   <section class="hero">
     <div class="container">
       <span class="eyebrow">Train at home · 10 & 15 kg dumbbells</span>
       <h1>Build the core, burn the fat</h1>
       <p class="lead">3–4 sessions a week, ~30–40 minutes each. Full-body strength to protect muscle, focused core work to shape your midsection, and movement to widen the deficit.</p>
+    </div>
+  </section>
+
+  <!-- ON THIS PAGE — quick links (persistent right rail on wide screens) -->
+  <section class="section-tight" id="onthispage" aria-label="On this page">
+    <div class="container">
+      <nav class="quicklinks">
+        <span class="ql-label">On this page</span>
+        <a href="#principles">Principles</a>
+        <a href="#split">Weekly split</a>
+        <a href="#hiit">Cardio / HIIT</a>
+        <a href="#lib-upper">Upper abs</a>
+        <a href="#lib-lower">Lower &amp; deep core</a>
+        <a href="#lib-obliques">Side abs</a>
+        <a href="#lib-strength">Strength</a>
+        <a href="#sessions">Sessions</a>
+      </nav>
     </div>
   </section>
 
@@ -54,7 +79,7 @@
   </section>
 
   <!-- WEEKLY SPLIT -->
-  <section class="section">
+  <section class="section" id="split">
     <div class="container">
       <h2>Your weekly split</h2>
       <p class="muted">Do <strong>3 days</strong> minimum (A · B · C). Add <strong>Day D</strong> if you have a 4th day. Leave at least one rest day between the two strength days.</p>
@@ -76,7 +101,7 @@
   </section>
 
   <!-- HIIT -->
-  <section class="section-tight">
+  <section class="section-tight" id="hiit">
     <div class="container">
       <h2>Day B — the cardio/HIIT block</h2>
       <p class="muted">15–20 minutes. 40 seconds hard, 20 seconds rest. Go through the list, then repeat 2–3 rounds.</p>
@@ -88,7 +113,7 @@
   </section>
 
   <!-- MUSCLE MAP LEGEND -->
-  <section class="section">
+  <section class="section" id="library">
     <div class="container">
       <h2>The exercise library</h2>
       <p class="muted">Each card shows a <strong>muscle map</strong> (which part of your core the move hits), the sets &amp; reps, which dumbbell to grab, form cues, and a demo video. <span class="badge">Tip: tap “Watch demo” to see the movement.</span></p>
@@ -98,23 +123,73 @@
         <span><i style="background:#E3DCCD"></i>Not the focus</span>
       </div>
 
-      <!-- CORE BLOCK -->
-      <h3 class="mt-4" style="color:var(--terracotta)">Core &amp; abs</h3>
-      <div class="grid cols-2 mt-1">
+      <div class="ex-filters" id="ex-filters" role="group" aria-label="Quick filter by core area">
+        <button class="ex-filter active" type="button" data-filter="all">All</button>
+        <button class="ex-filter" type="button" data-filter="upper">Upper abs</button>
+        <button class="ex-filter" type="button" data-filter="lower">Lower abs</button>
+        <button class="ex-filter" type="button" data-filter="obliques">Side abs</button>
+      </div>
 
-        <!-- Weighted Crunch -->
-        <div class="card ex-card">
+      <div class="callout good"><span class="ci">★</span><div><strong>Some moves are Jeremy Ethier's picks</strong> (Built With Science) — look for the <span class="badge jeremy">Jeremy pick</span> tag. His key point: visible abs track mostly with your body-fat % (men usually need ~10–12%), not how hard you train them — so keep the calorie deficit and protein (~2 g/kg) front and centre; these moves shape what the diet uncovers. <a href="https://www.youtube.com/@JeremyEthier" target="_blank" rel="noopener">His channel →</a></div></div>
+
+      <!-- UPPER ABS -->
+      <div class="ex-block" id="lib-upper">
+      <h3 class="mt-4" style="color:var(--terracotta)">Upper abs</h3>
+      <div class="grid ex-grid mt-1">
+
+        <!-- Crunch (Jeremy) -->
+        <div class="card ex-card" id="ex-crunch">
           <div class="muscle-thumb" data-primary="upper" data-secondary="lower"></div>
           <div>
-            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Weighted Crunch</h3><span class="badge teal">10 kg on chest</span></div>
-            <div class="ex-meta"><span class="badge">3 × 12–15</span><span class="badge gold">Upper abs</span></div>
-            <ul class="cue"><li>Hold the dumbbell on your chest; curl shoulders up, don't yank your neck.</li><li>Crunch the ribs toward hips; pause 1s at the top.</li><li>Week 3: slow the lowering to 3 seconds.</li></ul>
-            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=weighted+crunch+form">▶ Watch demo</a>
+            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Crunch</h3><span class="badge gold">Bodyweight → +10 kg</span></div>
+            <div class="ex-meta"><span class="badge">3 × 10–25</span><span class="badge gold">Upper abs</span><span class="badge jeremy">Jeremy pick</span></div>
+            <ul class="cue"><li>Knees bent (a rolled towel under the lower back helps). Flex the spine to lift the shoulder blades — no neck pulling, no momentum.</li><li>Pause and squeeze at the top, lower under control.</li><li>Progress by holding a dumbbell on your chest.</li></ul>
+            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=jeremy+ethier+crunch+form">▶ Watch demo</a>
+          </div>
+        </div>
+
+        <!-- Bicycle Crunch -->
+        <div class="card ex-card" id="ex-bicycle-crunch">
+          <div class="muscle-thumb" data-primary="upper" data-secondary="obliques lower"></div>
+          <div>
+            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Bicycle Crunch</h3><span class="badge">Bodyweight</span></div>
+            <div class="ex-meta"><span class="badge">3 × 20 (10/side)</span><span class="badge gold">Upper abs + obliques</span></div>
+            <ul class="cue"><li>Opposite elbow toward opposite knee; extend the other leg.</li><li>Rotate from the ribs, slow and controlled — not fast and floppy.</li><li>Keep your lower back pressed down. Top-ranked move for overall rectus activation.</li></ul>
+            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=bicycle+crunch+form">▶ Watch demo</a>
+          </div>
+        </div>
+
+        <!-- Serratus Jab (Jeremy) -->
+        <div class="card ex-card" id="ex-serratus-jab">
+          <div class="muscle-thumb" data-primary="upper" data-secondary="obliques"></div>
+          <div>
+            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Serratus Jab</h3><span class="badge teal">light, ~5 kg</span></div>
+            <div class="ex-meta"><span class="badge">3 × 10–15/side</span><span class="badge gold">Serratus (frames the abs)</span><span class="badge jeremy">Jeremy pick</span></div>
+            <ul class="cue"><li>Lying on your back (or standing), "jab"/punch a light dumbbell straight up &amp; forward, letting the shoulder blade reach around the ribs.</li><li>Hits the serratus anterior — the finger-like muscle that frames and pops the upper abs.</li><li>Keep it light and reach fully at the top of each jab.</li></ul>
+            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=jeremy+ethier+serratus+anterior+exercise">▶ Watch demo</a>
+          </div>
+        </div>
+      </div>
+      </div><!-- /ex-block upper -->
+
+      <!-- LOWER & DEEP CORE -->
+      <div class="ex-block" id="lib-lower">
+      <h3 class="mt-4" style="color:var(--terracotta)">Lower &amp; deep core</h3>
+      <div class="grid ex-grid mt-1">
+
+        <!-- Reverse Crunch (Jeremy) -->
+        <div class="card ex-card" id="ex-reverse-crunch">
+          <div class="muscle-thumb" data-primary="lower" data-secondary=""></div>
+          <div>
+            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Reverse Crunch</h3><span class="badge gold">Bodyweight → weighted</span></div>
+            <div class="ex-meta"><span class="badge">3 × 15–20</span><span class="badge gold">Lower abs</span><span class="badge jeremy">Jeremy pick</span></div>
+            <ul class="cue"><li>On your back, knees bent at 90°. Curl your <em>pelvis</em> up toward your belly button — lift the hips, don't just swing the legs.</li><li>Lower slowly; keep your lower back flat to the floor.</li><li>A "bottom-up" move — Ethier's top pick for the lower abs. Progress: do it on a decline or hold a light weight between the feet.</li></ul>
+            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=jeremy+ethier+reverse+crunch">▶ Watch demo</a>
           </div>
         </div>
 
         <!-- Lying Leg Raise -->
-        <div class="card ex-card">
+        <div class="card ex-card" id="ex-lying-leg-raise">
           <div class="muscle-thumb" data-primary="lower" data-secondary=""></div>
           <div>
             <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Lying Leg Raise</h3><span class="badge">Bodyweight</span></div>
@@ -124,31 +199,20 @@
           </div>
         </div>
 
-        <!-- Bicycle Crunch -->
-        <div class="card ex-card">
-          <div class="muscle-thumb" data-primary="obliques lower" data-secondary="upper"></div>
+        <!-- Ab Walkout (Jeremy) -->
+        <div class="card ex-card" id="ex-ab-walkout">
+          <div class="muscle-thumb" data-primary="lower" data-secondary="upper obliques"></div>
           <div>
-            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Bicycle Crunch</h3><span class="badge">Bodyweight</span></div>
-            <div class="ex-meta"><span class="badge">3 × 20 (10/side)</span><span class="badge gold">Obliques + abs</span></div>
-            <ul class="cue"><li>Opposite elbow toward opposite knee; extend the other leg.</li><li>Rotate from the ribs, slow and controlled — not fast and floppy.</li><li>Keep your lower back pressed down.</li></ul>
-            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=bicycle+crunch+form">▶ Watch demo</a>
-          </div>
-        </div>
-
-        <!-- Russian Twist -->
-        <div class="card ex-card">
-          <div class="muscle-thumb" data-primary="obliques" data-secondary="lower"></div>
-          <div>
-            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Weighted Russian Twist</h3><span class="badge teal">10 kg</span></div>
-            <div class="ex-meta"><span class="badge">3 × 16 (8/side)</span><span class="badge gold">Obliques</span></div>
-            <ul class="cue"><li>Lean back ~45°, heels light or lifted. Rotate the weight side to side.</li><li>Move from the waist, not just the arms; tap the floor each side.</li><li>Keep your chest tall — don't hunch.</li></ul>
-            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=dumbbell+russian+twist+form">▶ Watch demo</a>
+            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Ab Walkout</h3><span class="badge gold">Bodyweight</span></div>
+            <div class="ex-meta"><span class="badge">3 × 5–10 reps</span><span class="badge gold">Deep core (transverse)</span><span class="badge jeremy">Jeremy pick</span></div>
+            <ul class="cue"><li>On all fours, brace your core and tuck the pelvis. Slowly walk your hands forward as far as you can <em>without your lower back arching</em>, then walk back.</li><li>Trains the deep transverse abdominis — the stabiliser that flattens the waist.</li><li>Stop at the furthest point you can still keep a flat back.</li></ul>
+            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=jeremy+ethier+ab+walkout">▶ Watch demo</a>
           </div>
         </div>
 
         <!-- Plank -->
-        <div class="card ex-card">
-          <div class="muscle-thumb" data-primary="" data-secondary="upper lower obliques"></div>
+        <div class="card ex-card" id="ex-plank">
+          <div class="muscle-thumb" data-primary="lower" data-secondary="upper obliques"></div>
           <div>
             <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Plank</h3><span class="badge">Bodyweight</span></div>
             <div class="ex-meta"><span class="badge">3 × 30–60 s</span><span class="badge gold">Deep core</span></div>
@@ -156,9 +220,38 @@
             <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=plank+proper+form">▶ Watch demo</a>
           </div>
         </div>
+      </div>
+      </div><!-- /ex-block lower -->
+
+      <!-- SIDE ABS / OBLIQUES -->
+      <div class="ex-block" id="lib-obliques">
+      <h3 class="mt-4" style="color:var(--terracotta)">Side abs (obliques)</h3>
+      <div class="grid ex-grid mt-1">
+
+        <!-- Russian Twist (Jeremy) -->
+        <div class="card ex-card" id="ex-russian-twist">
+          <div class="muscle-thumb" data-primary="obliques" data-secondary="lower"></div>
+          <div>
+            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Russian Twist</h3><span class="badge gold">Bodyweight → weighted</span></div>
+            <div class="ex-meta"><span class="badge">3 × ~60 s</span><span class="badge gold">Obliques</span><span class="badge jeremy">Jeremy pick</span></div>
+            <ul class="cue"><li>Sit leaning back ~45°, knees bent. Rotate the <em>torso</em> (not just the arms) and tap the floor each side.</li><li>Align your shoulders with your legs as you turn; keep the chest tall.</li><li>Hold a dumbbell to add resistance once the bodyweight version is easy.</li></ul>
+            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=jeremy+ethier+russian+twist">▶ Watch demo</a>
+          </div>
+        </div>
+
+        <!-- High-to-Low Woodchopper (Jeremy) -->
+        <div class="card ex-card" id="ex-high-to-low-woodchopper">
+          <div class="muscle-thumb" data-primary="obliques" data-secondary="upper"></div>
+          <div>
+            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">High-to-Low Woodchopper</h3><span class="badge teal">10 kg</span></div>
+            <div class="ex-meta"><span class="badge">3 × 10–15/side</span><span class="badge gold">Obliques</span><span class="badge jeremy">Jeremy pick</span></div>
+            <ul class="cue"><li>Hold a dumbbell in both hands; pull it diagonally from high overhead down across to the opposite hip.</li><li>Pivot the back foot and rotate through the trunk — control it back up.</li><li>Loads the obliques directly along the line their fibres run.</li></ul>
+            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=jeremy+ethier+woodchopper">▶ Watch demo</a>
+          </div>
+        </div>
 
         <!-- Side Plank -->
-        <div class="card ex-card">
+        <div class="card ex-card" id="ex-side-plank">
           <div class="muscle-thumb" data-primary="obliques" data-secondary=""></div>
           <div>
             <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Side Plank</h3><span class="badge">Bodyweight</span></div>
@@ -168,41 +261,8 @@
           </div>
         </div>
 
-        <!-- Dead Bug -->
-        <div class="card ex-card">
-          <div class="muscle-thumb" data-primary="lower" data-secondary="upper obliques"></div>
-          <div>
-            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Dead Bug</h3><span class="badge">Bodyweight</span></div>
-            <div class="ex-meta"><span class="badge">3 × 8/side</span><span class="badge gold">Deep core control</span></div>
-            <ul class="cue"><li>On your back, arms up, knees at 90°. Lower opposite arm & leg slowly.</li><li>Keep your lower back glued to the floor the whole time.</li><li>The best move for learning to brace — foundation for everything.</li></ul>
-            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=dead+bug+exercise+form">▶ Watch demo</a>
-          </div>
-        </div>
-
-        <!-- Abdominal Vacuum -->
-        <div class="card ex-card">
-          <div class="muscle-thumb" data-primary="lower" data-secondary="upper obliques"></div>
-          <div>
-            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Abdominal Vacuum</h3><span class="badge gold">Bodyweight · daily</span></div>
-            <div class="ex-meta"><span class="badge">3 × 15–30 s holds</span><span class="badge gold">Deep core (transverse)</span></div>
-            <ul class="cue"><li>Exhale <em>all</em> your air out, then pull your belly button in toward your spine and hold — keep breathing shallowly through it.</li><li>Trains the deep transverse abdominis — the muscle that works like an internal corset, tightening the waist and improving posture.</li><li>Do it anywhere: standing, seated at a desk, or on all fours. Safe to do every day. (It tightens, it doesn't burn fat — the deficit does that.)</li></ul>
-            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=stomach+vacuum+exercise+proper+form">▶ Watch demo</a>
-          </div>
-        </div>
-
-        <!-- Woodchopper -->
-        <div class="card ex-card">
-          <div class="muscle-thumb" data-primary="obliques" data-secondary="upper"></div>
-          <div>
-            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Standing Woodchopper</h3><span class="badge teal">10 kg</span></div>
-            <div class="ex-meta"><span class="badge">3 × 10/side</span><span class="badge gold">Obliques</span></div>
-            <ul class="cue"><li>Hold the dumbbell in both hands; swing diagonally from low hip to high overhead.</li><li>Pivot the back foot, rotate through the trunk.</li><li>Control it back down — don't just drop.</li></ul>
-            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=dumbbell+woodchopper+form">▶ Watch demo</a>
-          </div>
-        </div>
-
         <!-- Suitcase Carry -->
-        <div class="card ex-card">
+        <div class="card ex-card" id="ex-suitcase-carry">
           <div class="muscle-thumb" data-primary="obliques" data-secondary="upper lower"></div>
           <div>
             <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Suitcase Carry</h3><span class="badge teal">15 kg</span></div>
@@ -211,26 +271,17 @@
             <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=suitcase+carry+exercise">▶ Watch demo</a>
           </div>
         </div>
-
-        <!-- Mountain Climbers -->
-        <div class="card ex-card">
-          <div class="muscle-thumb" data-primary="lower obliques" data-secondary="upper"></div>
-          <div>
-            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Mountain Climbers</h3><span class="badge">Bodyweight · cardio</span></div>
-            <div class="ex-meta"><span class="badge">3 × 30–40 s</span><span class="badge gold">Abs + heart rate</span></div>
-            <ul class="cue"><li>High-plank position; drive knees to chest one at a time, fast.</li><li>Keep hips low and core tight — don't bounce your butt up.</li><li>Doubles as cardio in the Day B circuit.</li></ul>
-            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=mountain+climbers+form">▶ Watch demo</a>
-          </div>
-        </div>
       </div>
+      </div><!-- /ex-block obliques -->
 
       <!-- STRENGTH BLOCK -->
+      <div class="ex-block" id="lib-strength">
       <h3 class="mt-4" style="color:var(--teal-dark)">Full-body strength</h3>
       <p class="muted">Your core braces on every one of these — that's why compound lifts build a strong, tight midsection <em>and</em> protect muscle while you cut.</p>
-      <div class="grid cols-2 mt-1">
+      <div class="grid ex-grid mt-1">
 
         <!-- Goblet Squat -->
-        <div class="card ex-card">
+        <div class="card ex-card" id="ex-goblet-squat">
           <div class="muscle-thumb" data-primary="" data-secondary="upper lower obliques" data-label="Legs · glutes"></div>
           <div>
             <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Goblet Squat</h3><span class="badge teal">15 kg at chest</span></div>
@@ -241,7 +292,7 @@
         </div>
 
         <!-- RDL -->
-        <div class="card ex-card">
+        <div class="card ex-card" id="ex-romanian-deadlift">
           <div class="muscle-thumb" data-primary="" data-secondary="lower obliques" data-label="Hamstrings · back"></div>
           <div>
             <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Romanian Deadlift</h3><span class="badge teal">15 kg (+10 kg)</span></div>
@@ -252,7 +303,7 @@
         </div>
 
         <!-- One-arm Row -->
-        <div class="card ex-card">
+        <div class="card ex-card" id="ex-one-arm-row">
           <div class="muscle-thumb" data-primary="" data-secondary="obliques" data-label="Back · lats"></div>
           <div>
             <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">One-Arm Row</h3><span class="badge teal">15 kg / side</span></div>
@@ -263,7 +314,7 @@
         </div>
 
         <!-- Floor Press -->
-        <div class="card ex-card">
+        <div class="card ex-card" id="ex-floor-press">
           <div class="muscle-thumb" data-primary="" data-secondary="upper" data-label="Chest · triceps"></div>
           <div>
             <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Floor Press</h3><span class="badge teal">10–15 kg / hand</span></div>
@@ -274,7 +325,7 @@
         </div>
 
         <!-- Shoulder Press -->
-        <div class="card ex-card">
+        <div class="card ex-card" id="ex-standing-shoulder-press">
           <div class="muscle-thumb" data-primary="" data-secondary="upper obliques" data-label="Shoulders"></div>
           <div>
             <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Standing Shoulder Press</h3><span class="badge teal">10 kg / hand</span></div>
@@ -285,7 +336,7 @@
         </div>
 
         <!-- Reverse Lunge -->
-        <div class="card ex-card">
+        <div class="card ex-card" id="ex-reverse-lunge">
           <div class="muscle-thumb" data-primary="" data-secondary="obliques lower" data-label="Legs · glutes"></div>
           <div>
             <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Reverse Lunge</h3><span class="badge teal">10 kg / hand</span></div>
@@ -296,7 +347,7 @@
         </div>
 
         <!-- Hip Thrust -->
-        <div class="card ex-card">
+        <div class="card ex-card" id="ex-dumbbell-hip-thrust">
           <div class="muscle-thumb" data-primary="" data-secondary="lower" data-label="Glutes"></div>
           <div>
             <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Dumbbell Hip Thrust</h3><span class="badge teal">15 kg on hips</span></div>
@@ -306,99 +357,20 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- BELLY-FAT FOCUS (Jeremy Ethier) -->
-  <section class="section" id="belly-fat">
-    <div class="container">
-      <h2>Belly-fat focus — Jeremy Ethier's picks</h2>
-      <p class="muted">A science-based core routine adapted from <a href="https://www.youtube.com/@JeremyEthier" target="_blank" rel="noopener">Jeremy Ethier · Built With Science</a>. These <em>build and define</em> the abs — the flat stomach itself still comes from the calorie deficit + protein. Run them as a circuit <strong>2–3× / week</strong>, never daily (abs need recovery too).</p>
-      <div class="callout danger"><span class="ci">🎯</span><div><strong>His core message:</strong> visible abs are mostly a function of body-fat %, not how hard you train them — men usually need to get to ~10–12% body fat to see them. No exercise spot-reduces belly fat, so keep the deficit and protein (~2 g/kg) front and centre; this routine just shapes what the diet uncovers.</div></div>
-
-      <h3 class="mt-3" style="color:var(--terracotta)">The circuit · 3 rounds — 15 s rest between moves, ~2 min between rounds</h3>
-      <div class="grid cols-2 mt-1">
-
-        <!-- Ab Walkout -->
-        <div class="card ex-card">
-          <div class="muscle-thumb" data-primary="lower" data-secondary="upper obliques"></div>
-          <div>
-            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Ab Walkout</h3><span class="badge gold">Bodyweight</span></div>
-            <div class="ex-meta"><span class="badge">3 × 5–10 reps</span><span class="badge gold">Deep core (transverse)</span></div>
-            <ul class="cue"><li>On all fours, brace your core and tuck the pelvis. Slowly walk your hands forward as far as you can <em>without your lower back arching</em>, then walk back.</li><li>Trains the deep transverse abdominis — the stabiliser that flattens the waist.</li><li>Stop at the furthest point you can still keep a flat back.</li></ul>
-            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=jeremy+ethier+ab+walkout">▶ Watch demo</a>
-          </div>
-        </div>
-
-        <!-- Reverse Crunch -->
-        <div class="card ex-card">
-          <div class="muscle-thumb" data-primary="lower" data-secondary=""></div>
-          <div>
-            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Reverse Crunch</h3><span class="badge gold">Bodyweight → weighted</span></div>
-            <div class="ex-meta"><span class="badge">3 × 15–20</span><span class="badge gold">Lower abs</span></div>
-            <ul class="cue"><li>On your back, knees bent at 90°. Curl your <em>pelvis</em> up toward your belly button — lift the hips, don't just swing the legs.</li><li>Lower slowly; keep your lower back flat to the floor.</li><li>A "bottom-up" move — Ethier's top pick for the lower abs. Progress: do it on a decline or hold a light weight between the feet.</li></ul>
-            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=jeremy+ethier+reverse+crunch">▶ Watch demo</a>
-          </div>
-        </div>
-
-        <!-- Crunch -->
-        <div class="card ex-card">
-          <div class="muscle-thumb" data-primary="upper" data-secondary="lower"></div>
-          <div>
-            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Crunch</h3><span class="badge gold">Bodyweight → +10 kg</span></div>
-            <div class="ex-meta"><span class="badge">3 × 10–25</span><span class="badge gold">Upper abs</span></div>
-            <ul class="cue"><li>Knees bent (a rolled towel under the lower back helps). Flex the spine to lift the shoulder blades — no neck pulling, no momentum.</li><li>Pause and squeeze at the top, lower under control.</li><li>Progress by holding a dumbbell on your chest.</li></ul>
-            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=jeremy+ethier+crunch+form">▶ Watch demo</a>
-          </div>
-        </div>
-
-        <!-- Russian Twist -->
-        <div class="card ex-card">
-          <div class="muscle-thumb" data-primary="obliques" data-secondary="lower"></div>
-          <div>
-            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Russian Twist</h3><span class="badge gold">Bodyweight → weighted</span></div>
-            <div class="ex-meta"><span class="badge">3 × ~60 s</span><span class="badge gold">Obliques</span></div>
-            <ul class="cue"><li>Sit leaning back ~45°, knees bent. Rotate the <em>torso</em> (not just the arms) and tap the floor each side.</li><li>Align your shoulders with your legs as you turn; keep the chest tall.</li><li>Hold a dumbbell to add resistance once the bodyweight version is easy.</li></ul>
-            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=jeremy+ethier+russian+twist">▶ Watch demo</a>
-          </div>
-        </div>
-
-        <!-- High-to-Low Woodchopper -->
-        <div class="card ex-card">
-          <div class="muscle-thumb" data-primary="obliques" data-secondary="upper"></div>
-          <div>
-            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">High-to-Low Woodchopper</h3><span class="badge teal">10 kg</span></div>
-            <div class="ex-meta"><span class="badge">3 × 10–15/side</span><span class="badge gold">Obliques</span></div>
-            <ul class="cue"><li>Hold a dumbbell in both hands; pull it diagonally from high overhead down across to the opposite hip.</li><li>Pivot the back foot and rotate through the trunk — control it back up.</li><li>Loads the obliques directly along the line their fibres run.</li></ul>
-            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=jeremy+ethier+woodchopper">▶ Watch demo</a>
-          </div>
-        </div>
-
-        <!-- Serratus Jab -->
-        <div class="card ex-card">
-          <div class="muscle-thumb" data-primary="upper" data-secondary="obliques"></div>
-          <div>
-            <div class="flex between items-center wrap"><h3 class="mt-0 mb-0">Serratus Jab</h3><span class="badge teal">light, ~5 kg</span></div>
-            <div class="ex-meta"><span class="badge">3 × 10–15/side</span><span class="badge gold">Serratus (frames the abs)</span></div>
-            <ul class="cue"><li>Lying on your back (or standing), "jab"/punch a light dumbbell straight up &amp; forward, letting the shoulder blade reach around the ribs.</li><li>Hits the serratus anterior — the finger-like muscle that frames and pops the upper abs.</li><li>Keep it light and reach fully at the top of each jab.</li></ul>
-            <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=jeremy+ethier+serratus+anterior+exercise">▶ Watch demo</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="callout good mt-3"><span class="ci">🔁</span><div><strong>How to run it:</strong> go through all six back-to-back (15 s rest between moves), rest ~2 min, then repeat for 3 rounds total. Bolt it onto the end of a workout or do it on a rest day, 2–3× per week. Progress by adding reps first, then load. <a href="https://www.youtube.com/@JeremyEthier" target="_blank" rel="noopener">Jeremy Ethier's channel →</a></div></div>
+      </div><!-- /ex-block strength -->
     </div>
   </section>
 
   <!-- SESSION TEMPLATES -->
-  <section class="section-tight">
+  <section class="section-tight" id="sessions">
     <div class="container">
       <h2>Put it together — copy these sessions</h2>
+      <p class="muted">Tap any exercise to jump to its card in the library.</p>
       <div class="grid cols-2">
-        <div class="card"><span class="badge teal">Day A · strength + core</span><ol class="mb-0"><li>Warm-up (5 min)</li><li>Goblet Squat — 3×10–12</li><li>One-Arm Row — 3×10/side</li><li>Shoulder Press — 3×8–12</li><li>Weighted Crunch — 3×12–15</li><li>Plank — 3×30–60s</li><li>Cool-down</li></ol></div>
-        <div class="card"><span class="badge terra">Day B · cardio + core</span><ol class="mb-0"><li>Warm-up (5 min)</li><li>HIIT intervals — 2–3 rounds (15–20 min)</li><li>Bicycle Crunch — 3×20</li><li>Russian Twist — 3×16</li><li>Side Plank — 3×20–40s/side</li><li>Cool-down</li></ol></div>
-        <div class="card"><span class="badge teal">Day C · strength + core</span><ol class="mb-0"><li>Warm-up (5 min)</li><li>Reverse Lunge — 3×8/leg</li><li>Hip Thrust — 3×12–15</li><li>Floor Press — 3×10–12</li><li>Suitcase Carry — 3×30–40m/side</li><li>Leg Raise — 3×10–15</li><li>Cool-down</li></ol></div>
-        <div class="card"><span class="badge gold">Day D · optional core + walk</span><ol class="mb-0"><li>Warm-up (5 min)</li><li>Core circuit ×3: Crunch 15 · Leg Raise 12 · Russian Twist 16 · Plank 40s · Mountain Climbers 40s</li><li>30–40 min brisk walk or easy jog</li></ol></div>
+        <div class="card"><span class="badge teal">Day A · strength + core</span><ol class="mb-0"><li>Warm-up (5 min)</li><li><a href="#ex-goblet-squat" data-goto="goblet-squat">Goblet Squat</a> — 3×10–12</li><li><a href="#ex-one-arm-row" data-goto="one-arm-row">One-Arm Row</a> — 3×10/side</li><li><a href="#ex-standing-shoulder-press" data-goto="standing-shoulder-press">Shoulder Press</a> — 3×8–12</li><li><a href="#ex-crunch" data-goto="crunch">Crunch</a> — 3×15–20</li><li><a href="#ex-plank" data-goto="plank">Plank</a> — 3×30–60s</li><li>Cool-down</li></ol></div>
+        <div class="card"><span class="badge terra">Day B · cardio + core</span><ol class="mb-0"><li>Warm-up (5 min)</li><li>HIIT intervals — 2–3 rounds (15–20 min)</li><li><a href="#ex-bicycle-crunch" data-goto="bicycle-crunch">Bicycle Crunch</a> — 3×20</li><li><a href="#ex-russian-twist" data-goto="russian-twist">Russian Twist</a> — 3×~60s</li><li><a href="#ex-side-plank" data-goto="side-plank">Side Plank</a> — 3×20–40s/side</li><li>Cool-down</li></ol></div>
+        <div class="card"><span class="badge teal">Day C · strength + core</span><ol class="mb-0"><li>Warm-up (5 min)</li><li><a href="#ex-reverse-lunge" data-goto="reverse-lunge">Reverse Lunge</a> — 3×8/leg</li><li><a href="#ex-dumbbell-hip-thrust" data-goto="dumbbell-hip-thrust">Hip Thrust</a> — 3×12–15</li><li><a href="#ex-floor-press" data-goto="floor-press">Floor Press</a> — 3×10–12</li><li><a href="#ex-suitcase-carry" data-goto="suitcase-carry">Suitcase Carry</a> — 3×30–40m/side</li><li><a href="#ex-lying-leg-raise" data-goto="lying-leg-raise">Lying Leg Raise</a> — 3×10–15</li><li>Cool-down</li></ol></div>
+        <div class="card"><span class="badge gold">Day D · Jeremy core circuit + walk</span><ol class="mb-0"><li>Warm-up (5 min)</li><li>Circuit ×3 — 15 s rest between moves, ~2 min between rounds:</li><li><a href="#ex-ab-walkout" data-goto="ab-walkout">Ab Walkout</a> — 5–10</li><li><a href="#ex-reverse-crunch" data-goto="reverse-crunch">Reverse Crunch</a> — 15–20</li><li><a href="#ex-crunch" data-goto="crunch">Crunch</a> — 10–25</li><li><a href="#ex-russian-twist" data-goto="russian-twist">Russian Twist</a> — ~60s</li><li><a href="#ex-high-to-low-woodchopper" data-goto="high-to-low-woodchopper">High-to-Low Woodchopper</a> — 10–15/side</li><li><a href="#ex-serratus-jab" data-goto="serratus-jab">Serratus Jab</a> — 10–15/side</li><li>Then a 30–40 min brisk walk</li></ol></div>
       </div>
       <div class="callout warn mt-3"><span class="ci">⚠️</span><div><strong>Form &amp; safety:</strong> never train through sharp pain. If a weight breaks your form, drop to a lighter one or fewer reps. Sore-but-functional is normal; joint pain is not. With a rapid calorie cut you may feel a bit weaker — that's expected, just keep the protein high.</div></div>
       <a class="btn btn-primary mt-2" href="tracker.html">Log your workouts in the Tracker →</a>
@@ -461,6 +433,148 @@
         }
       }
       document.querySelectorAll('.muscle-thumb').forEach(applyZones);
+    })();
+  </script>
+
+  <script>
+    /* Exercise library — star favourites (persistent, sticky bar) + quick zone filter. */
+    (function () {
+      var STORE_KEY = 'exstars';
+      function slug(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.ex-card'));
+      var byId = {};
+      var bar = document.getElementById('starred-bar');
+      var chipHost = document.getElementById('starred-chips');
+      var starred = {};
+
+      // Give every card a stable id + a star button.
+      cards.forEach(function (card) {
+        var h = card.querySelector('h3');
+        var name = h ? h.textContent.trim() : '';
+        var id = slug(name);
+        card.dataset.exId = id;
+        card.dataset.exName = name;
+        if (!card.id) card.id = 'ex-' + id;
+        byId[id] = card;
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'star-btn';
+        btn.dataset.star = id;
+        btn.setAttribute('aria-label', 'Star ' + name);
+        btn.textContent = '☆';
+        card.appendChild(btn);
+      });
+
+      function render() {
+        cards.forEach(function (card) {
+          var on = !!starred[card.dataset.exId];
+          var btn = card.querySelector('.star-btn');
+          if (btn) {
+            btn.classList.toggle('on', on);
+            btn.textContent = on ? '★' : '☆';
+            btn.setAttribute('aria-pressed', String(on));
+          }
+        });
+        var ids = Object.keys(starred).filter(function (id) { return starred[id] && byId[id]; });
+        chipHost.innerHTML = '';
+        ids.forEach(function (id) {
+          var name = byId[id].dataset.exName;
+          var chip = document.createElement('span');
+          chip.className = 'starred-chip';
+          var nm = document.createElement('button');
+          nm.type = 'button'; nm.className = 'starred-chip-name'; nm.dataset.goto = id;
+          nm.textContent = name;
+          var st = document.createElement('button');
+          st.type = 'button'; st.className = 'starred-chip-star'; st.dataset.unstar = id;
+          st.setAttribute('aria-label', 'Remove ' + name + ' from starred');
+          st.textContent = '★';
+          chip.appendChild(nm); chip.appendChild(st);
+          chipHost.appendChild(chip);
+        });
+        if (bar) bar.hidden = ids.length === 0;
+      }
+
+      function toggle(id) {
+        if (starred[id]) delete starred[id]; else starred[id] = true;
+        render();
+        if (window.FP && FP.Storage) FP.Storage.set(STORE_KEY, starred);
+      }
+
+      /* ---- quick filter (library section only) ---- */
+      var filterBtns = Array.prototype.slice.call(document.querySelectorAll('.ex-filter'));
+      var libSection = document.getElementById('library');
+      var libCards = libSection ? Array.prototype.slice.call(libSection.querySelectorAll('.ex-card')) : [];
+      var blocks = libSection ? Array.prototype.slice.call(libSection.querySelectorAll('.ex-block')) : [];
+
+      function zonesOf(card) {
+        var t = card.querySelector('.muscle-thumb');
+        var p = t ? (t.getAttribute('data-primary') || '') : '';
+        return p.split(/\s+/);
+      }
+
+      function setFilter(zone) {
+        filterBtns.forEach(function (b) { b.classList.toggle('active', b.dataset.filter === zone); });
+        libCards.forEach(function (card) {
+          var show = zone === 'all' || zonesOf(card).indexOf(zone) !== -1;
+          card.classList.toggle('ex-hide', !show);
+        });
+        blocks.forEach(function (block) {
+          block.classList.toggle('ex-hide', !block.querySelector('.ex-card:not(.ex-hide)'));
+        });
+      }
+
+      function gotoCard(id) {
+        var card = byId[id];
+        if (!card) return;
+        setFilter('all'); // make sure the card isn't filtered out before scrolling
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        card.classList.add('flash');
+        setTimeout(function () { card.classList.remove('flash'); }, 1400);
+      }
+
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest) return;
+        var el = e.target.closest('[data-star],[data-unstar],[data-goto],[data-filter]');
+        if (!el) return;
+        if (el.dataset.star != null) toggle(el.dataset.star);
+        else if (el.dataset.unstar != null) toggle(el.dataset.unstar);
+        else if (el.dataset.goto != null) { e.preventDefault(); gotoCard(el.dataset.goto); }
+        else if (el.dataset.filter != null) setFilter(el.dataset.filter);
+      });
+
+      /* ---- quick-links: keep a library sub-section visible when jumped to, and
+             highlight the current section (scroll-spy) in the persistent side rail ---- */
+      var qlLinks = Array.prototype.slice.call(document.querySelectorAll('.quicklinks a[href^="#"]'));
+      qlLinks.forEach(function (a) {
+        if (a.getAttribute('href').indexOf('#lib-') === 0) {
+          a.addEventListener('click', function () { setFilter('all'); }); // no preventDefault: let the native smooth scroll run
+        }
+      });
+      if (qlLinks.length && 'IntersectionObserver' in window) {
+        var linkFor = {}, targets = [], visible = {};
+        qlLinks.forEach(function (a) {
+          var el = document.getElementById(a.getAttribute('href').slice(1));
+          if (el) { linkFor[el.id] = a; targets.push(el); }
+        });
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { visible[e.target.id] = e.isIntersecting; });
+          var current = null;
+          targets.forEach(function (el) { if (!current && visible[el.id]) current = el.id; });
+          qlLinks.forEach(function (a) { a.classList.remove('active'); });
+          if (current && linkFor[current]) linkFor[current].classList.add('active');
+        }, { rootMargin: '-80px 0px -55% 0px', threshold: 0 });
+        targets.forEach(function (t) { io.observe(t); });
+      }
+
+      // Never print a filtered-down list.
+      window.addEventListener('beforeprint', function () { setFilter('all'); });
+
+      if (window.FP && FP.Storage) {
+        FP.Storage.get(STORE_KEY, {}).then(function (saved) { starred = saved || {}; render(); });
+      } else {
+        render();
+      }
     })();
   </script>
 </body>
